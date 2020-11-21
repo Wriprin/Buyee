@@ -84,12 +84,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BAL\BAL.csproj">
+    <ProjectReference Include="..\BAL\BLL.csproj">
       <Project>{b47b1298-939b-453b-b3b1-ab569707e9a4}</Project>
-      <Name>BAL</Name>
+      <Name>BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{026be6f9-debe-4b7c-892b-59d990260e84}</Project>
+      <Project>{fdaa0b52-9dd8-4378-a082-f0082411cf94}</Project>
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>

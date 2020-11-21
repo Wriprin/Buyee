@@ -30,6 +30,9 @@ namespace DAL
 		
     #region 可扩展性方法定义
     partial void OnCreated();
+    partial void Insertt_user(t_user instance);
+    partial void Updatet_user(t_user instance);
+    partial void Deletet_user(t_user instance);
     #endregion
 		
 		public DCDataContext() : 
@@ -72,10 +75,12 @@ namespace DAL
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.t_user")]
-	public partial class t_user
+	public partial class t_user : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _id;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
 		
 		private string _uname;
 		
@@ -85,12 +90,29 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _birthday;
 		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnunameChanging(string value);
+    partial void OnunameChanged();
+    partial void OnupwdChanging(string value);
+    partial void OnupwdChanged();
+    partial void OnusexChanging(string value);
+    partial void OnusexChanged();
+    partial void OnbirthdayChanging(System.Nullable<System.DateTime> value);
+    partial void OnbirthdayChanged();
+    #endregion
+		
 		public t_user()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
-		public System.Nullable<int> id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
 		{
 			get
 			{
@@ -100,7 +122,11 @@ namespace DAL
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -116,7 +142,11 @@ namespace DAL
 			{
 				if ((this._uname != value))
 				{
+					this.OnunameChanging(value);
+					this.SendPropertyChanging();
 					this._uname = value;
+					this.SendPropertyChanged("uname");
+					this.OnunameChanged();
 				}
 			}
 		}
@@ -132,7 +162,11 @@ namespace DAL
 			{
 				if ((this._upwd != value))
 				{
+					this.OnupwdChanging(value);
+					this.SendPropertyChanging();
 					this._upwd = value;
+					this.SendPropertyChanged("upwd");
+					this.OnupwdChanged();
 				}
 			}
 		}
@@ -148,7 +182,11 @@ namespace DAL
 			{
 				if ((this._usex != value))
 				{
+					this.OnusexChanging(value);
+					this.SendPropertyChanging();
 					this._usex = value;
+					this.SendPropertyChanged("usex");
+					this.OnusexChanged();
 				}
 			}
 		}
@@ -164,8 +202,32 @@ namespace DAL
 			{
 				if ((this._birthday != value))
 				{
+					this.OnbirthdayChanging(value);
+					this.SendPropertyChanging();
 					this._birthday = value;
+					this.SendPropertyChanged("birthday");
+					this.OnbirthdayChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
