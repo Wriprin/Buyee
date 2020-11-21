@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="mydb" Class="DCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=mydb;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="mydbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.t_user" Member="t_user">
+    <Type Name="t_user">
+      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="uname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="upwd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="usex" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
