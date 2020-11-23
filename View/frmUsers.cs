@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class Form1 : Form
+    public partial class frmUsers : Form
     {
-        public Form1()
+        public frmUsers()
         {
             InitializeComponent();
         }

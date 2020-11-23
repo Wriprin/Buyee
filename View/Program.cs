@@ -22,7 +22,7 @@ namespace View
 
             if (frmL.LoginOk == true)
             {
-                Application.Run(new Form1());
+                Application.Run(new frmMain());
             }
             
         }
