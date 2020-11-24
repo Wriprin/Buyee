@@ -2,56 +2,37 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=mydb;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="mydbConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Admin" Member="Admin">
     <Type Name="Admin">
-      <Column Name="账号" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="密码" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pwd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Goods" Member="Goods">
     <Type Name="Goods">
-      <Column Name="商品编号" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="商品类型" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="商品名称" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="商品价格" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="gid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="gtype" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="gname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="gprice" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Register" Member="Register">
-    <Type Name="Register">
-      <Column Name="学号" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="姓名" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="性别" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="密码" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="学校" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="Register_User_goods" Member="User_goods" ThisKey="学号" OtherKey="学号" Type="User_goods" />
+  <Table Name="dbo.UserGoods" Member="UserGoods">
+    <Type Name="UserGoods">
+      <Column Name="uid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gtype" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="gname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="gprice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="gstatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Users_UserGoods" Member="Users" ThisKey="uid" OtherKey="uid" Type="Users" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.t_user" Member="t_user">
-    <Type Name="t_user">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="uid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="uname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="upwd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="usex" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.t_UserGoods" Member="t_UserGoods">
-    <Type Name="t_UserGoods">
-      <Column Name="学号" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="商品编号" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="商品类型" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="商品名称" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="商品价格" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="商品状态" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.User_goods" Member="User_goods">
-    <Type Name="User_goods">
-      <Column Name="学号" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="商品编号" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="商品类型" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="商品名称" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="商品价格" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="商品状态" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="Register_User_goods" Member="Register" ThisKey="学号" OtherKey="学号" Type="Register" IsForeignKey="true" />
+      <Column Name="upwd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="uschool" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Users_UserGoods" Member="UserGoods" ThisKey="uid" OtherKey="uid" Type="UserGoods" />
     </Type>
   </Table>
 </Database>

@@ -29,10 +29,9 @@ namespace View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BLL.UserBLL objUB = new BLL.UserBLL();
+            BLL.AdminBLL objUB = new BLL.AdminBLL();
             if (objUB.Login(textBox1.Text, textBox2.Text))
             {
-                //MessageBox.Show("Access Ok");
                 LoginOk = true;
                 this.Close();
             }

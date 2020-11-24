@@ -18,7 +18,9 @@ namespace View
 
             frmLogin frmL = new frmLogin();
 
-            Application.Run(frmL);
+            frmUsers frmUsers = new frmUsers();
+
+            Application.Run(frmUsers);
 
             if (frmL.LoginOk == true)
             {

@@ -36,12 +36,9 @@ namespace DAL
     partial void InsertGoods(Goods instance);
     partial void UpdateGoods(Goods instance);
     partial void DeleteGoods(Goods instance);
-    partial void InsertRegister(Register instance);
-    partial void UpdateRegister(Register instance);
-    partial void DeleteRegister(Register instance);
-    partial void Insertt_user(t_user instance);
-    partial void Updatet_user(t_user instance);
-    partial void Deletet_user(t_user instance);
+    partial void InsertUsers(Users instance);
+    partial void UpdateUsers(Users instance);
+    partial void DeleteUsers(Users instance);
     #endregion
 		
 		public DCDataContext() : 
@@ -90,35 +87,19 @@ namespace DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<Register> Register
+		public System.Data.Linq.Table<UserGoods> UserGoods
 		{
 			get
 			{
-				return this.GetTable<Register>();
+				return this.GetTable<UserGoods>();
 			}
 		}
 		
-		public System.Data.Linq.Table<t_user> t_user
+		public System.Data.Linq.Table<Users> Users
 		{
 			get
 			{
-				return this.GetTable<t_user>();
-			}
-		}
-		
-		public System.Data.Linq.Table<t_UserGoods> t_UserGoods
-		{
-			get
-			{
-				return this.GetTable<t_UserGoods>();
-			}
-		}
-		
-		public System.Data.Linq.Table<User_goods> User_goods
-		{
-			get
-			{
-				return this.GetTable<User_goods>();
+				return this.GetTable<Users>();
 			}
 		}
 	}
@@ -129,18 +110,18 @@ namespace DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _账号;
+		private string _name;
 		
-		private string _密码;
+		private string _pwd;
 		
     #region 可扩展性方法定义
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void On账号Changing(string value);
-    partial void On账号Changed();
-    partial void On密码Changing(string value);
-    partial void On密码Changed();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnpwdChanging(string value);
+    partial void OnpwdChanged();
     #endregion
 		
 		public Admin()
@@ -148,42 +129,42 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_账号", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string 账号
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string name
 		{
 			get
 			{
-				return this._账号;
+				return this._name;
 			}
 			set
 			{
-				if ((this._账号 != value))
+				if ((this._name != value))
 				{
-					this.On账号Changing(value);
+					this.OnnameChanging(value);
 					this.SendPropertyChanging();
-					this._账号 = value;
-					this.SendPropertyChanged("账号");
-					this.On账号Changed();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_密码", DbType="NVarChar(50)")]
-		public string 密码
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pwd", DbType="NVarChar(50)")]
+		public string pwd
 		{
 			get
 			{
-				return this._密码;
+				return this._pwd;
 			}
 			set
 			{
-				if ((this._密码 != value))
+				if ((this._pwd != value))
 				{
-					this.On密码Changing(value);
+					this.OnpwdChanging(value);
 					this.SendPropertyChanging();
-					this._密码 = value;
-					this.SendPropertyChanged("密码");
-					this.On密码Changed();
+					this._pwd = value;
+					this.SendPropertyChanged("pwd");
+					this.OnpwdChanged();
 				}
 			}
 		}
@@ -215,26 +196,26 @@ namespace DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _商品编号;
+		private int _gid;
 		
-		private string _商品类型;
+		private string _gtype;
 		
-		private string _商品名称;
+		private string _gname;
 		
-		private System.Nullable<double> _商品价格;
+		private System.Nullable<double> _gprice;
 		
     #region 可扩展性方法定义
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void On商品编号Changing(string value);
-    partial void On商品编号Changed();
-    partial void On商品类型Changing(string value);
-    partial void On商品类型Changed();
-    partial void On商品名称Changing(string value);
-    partial void On商品名称Changed();
-    partial void On商品价格Changing(System.Nullable<double> value);
-    partial void On商品价格Changed();
+    partial void OngidChanging(int value);
+    partial void OngidChanged();
+    partial void OngtypeChanging(string value);
+    partial void OngtypeChanged();
+    partial void OngnameChanging(string value);
+    partial void OngnameChanged();
+    partial void OngpriceChanging(System.Nullable<double> value);
+    partial void OngpriceChanged();
     #endregion
 		
 		public Goods()
@@ -242,240 +223,82 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品编号", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string 商品编号
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gid", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int gid
 		{
 			get
 			{
-				return this._商品编号;
+				return this._gid;
 			}
 			set
 			{
-				if ((this._商品编号 != value))
+				if ((this._gid != value))
 				{
-					this.On商品编号Changing(value);
+					this.OngidChanging(value);
 					this.SendPropertyChanging();
-					this._商品编号 = value;
-					this.SendPropertyChanged("商品编号");
-					this.On商品编号Changed();
+					this._gid = value;
+					this.SendPropertyChanged("gid");
+					this.OngidChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品类型", DbType="NVarChar(50)")]
-		public string 商品类型
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gtype", DbType="NVarChar(50)")]
+		public string gtype
 		{
 			get
 			{
-				return this._商品类型;
+				return this._gtype;
 			}
 			set
 			{
-				if ((this._商品类型 != value))
+				if ((this._gtype != value))
 				{
-					this.On商品类型Changing(value);
+					this.OngtypeChanging(value);
 					this.SendPropertyChanging();
-					this._商品类型 = value;
-					this.SendPropertyChanged("商品类型");
-					this.On商品类型Changed();
+					this._gtype = value;
+					this.SendPropertyChanged("gtype");
+					this.OngtypeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品名称", DbType="NVarChar(50)")]
-		public string 商品名称
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gname", DbType="NVarChar(50)")]
+		public string gname
 		{
 			get
 			{
-				return this._商品名称;
+				return this._gname;
 			}
 			set
 			{
-				if ((this._商品名称 != value))
+				if ((this._gname != value))
 				{
-					this.On商品名称Changing(value);
+					this.OngnameChanging(value);
 					this.SendPropertyChanging();
-					this._商品名称 = value;
-					this.SendPropertyChanged("商品名称");
-					this.On商品名称Changed();
+					this._gname = value;
+					this.SendPropertyChanged("gname");
+					this.OngnameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品价格", DbType="Float")]
-		public System.Nullable<double> 商品价格
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gprice", DbType="Float")]
+		public System.Nullable<double> gprice
 		{
 			get
 			{
-				return this._商品价格;
+				return this._gprice;
 			}
 			set
 			{
-				if ((this._商品价格 != value))
+				if ((this._gprice != value))
 				{
-					this.On商品价格Changing(value);
+					this.OngpriceChanging(value);
 					this.SendPropertyChanging();
-					this._商品价格 = value;
-					this.SendPropertyChanged("商品价格");
-					this.On商品价格Changed();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Register")]
-	public partial class Register : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _学号;
-		
-		private string _姓名;
-		
-		private string _性别;
-		
-		private string _密码;
-		
-		private string _学校;
-		
-    #region 可扩展性方法定义
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void On学号Changing(string value);
-    partial void On学号Changed();
-    partial void On姓名Changing(string value);
-    partial void On姓名Changed();
-    partial void On性别Changing(string value);
-    partial void On性别Changed();
-    partial void On密码Changing(string value);
-    partial void On密码Changed();
-    partial void On学校Changing(string value);
-    partial void On学校Changed();
-    #endregion
-		
-		public Register()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_学号", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string 学号
-		{
-			get
-			{
-				return this._学号;
-			}
-			set
-			{
-				if ((this._学号 != value))
-				{
-					this.On学号Changing(value);
-					this.SendPropertyChanging();
-					this._学号 = value;
-					this.SendPropertyChanged("学号");
-					this.On学号Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_姓名", DbType="NVarChar(50)")]
-		public string 姓名
-		{
-			get
-			{
-				return this._姓名;
-			}
-			set
-			{
-				if ((this._姓名 != value))
-				{
-					this.On姓名Changing(value);
-					this.SendPropertyChanging();
-					this._姓名 = value;
-					this.SendPropertyChanged("姓名");
-					this.On姓名Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_性别", DbType="NVarChar(50)")]
-		public string 性别
-		{
-			get
-			{
-				return this._性别;
-			}
-			set
-			{
-				if ((this._性别 != value))
-				{
-					this.On性别Changing(value);
-					this.SendPropertyChanging();
-					this._性别 = value;
-					this.SendPropertyChanged("性别");
-					this.On性别Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_密码", DbType="NVarChar(50)")]
-		public string 密码
-		{
-			get
-			{
-				return this._密码;
-			}
-			set
-			{
-				if ((this._密码 != value))
-				{
-					this.On密码Changing(value);
-					this.SendPropertyChanging();
-					this._密码 = value;
-					this.SendPropertyChanged("密码");
-					this.On密码Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_学校", DbType="NVarChar(50)")]
-		public string 学校
-		{
-			get
-			{
-				return this._学校;
-			}
-			set
-			{
-				if ((this._学校 != value))
-				{
-					this.On学校Changing(value);
-					this.SendPropertyChanging();
-					this._学校 = value;
-					this.SendPropertyChanged("学校");
-					this.On学校Changed();
+					this._gprice = value;
+					this.SendPropertyChanged("gprice");
+					this.OngpriceChanged();
 				}
 			}
 		}
@@ -501,59 +324,176 @@ namespace DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.t_user")]
-	public partial class t_user : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserGoods")]
+	public partial class UserGoods
+	{
+		
+		private System.Nullable<int> _uid;
+		
+		private System.Nullable<int> _gid;
+		
+		private string _gtype;
+		
+		private string _gname;
+		
+		private System.Nullable<double> _gprice;
+		
+		private string _gstatus;
+		
+		public UserGoods()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uid", DbType="Int")]
+		public System.Nullable<int> uid
+		{
+			get
+			{
+				return this._uid;
+			}
+			set
+			{
+				if ((this._uid != value))
+				{
+					this._uid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gid", DbType="Int")]
+		public System.Nullable<int> gid
+		{
+			get
+			{
+				return this._gid;
+			}
+			set
+			{
+				if ((this._gid != value))
+				{
+					this._gid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gtype", DbType="NVarChar(50)")]
+		public string gtype
+		{
+			get
+			{
+				return this._gtype;
+			}
+			set
+			{
+				if ((this._gtype != value))
+				{
+					this._gtype = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gname", DbType="NVarChar(50)")]
+		public string gname
+		{
+			get
+			{
+				return this._gname;
+			}
+			set
+			{
+				if ((this._gname != value))
+				{
+					this._gname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gprice", DbType="Float")]
+		public System.Nullable<double> gprice
+		{
+			get
+			{
+				return this._gprice;
+			}
+			set
+			{
+				if ((this._gprice != value))
+				{
+					this._gprice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gstatus", DbType="NVarChar(50)")]
+		public string gstatus
+		{
+			get
+			{
+				return this._gstatus;
+			}
+			set
+			{
+				if ((this._gstatus != value))
+				{
+					this._gstatus = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
+	public partial class Users : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id;
+		private int _uid;
 		
 		private string _uname;
 		
-		private string _upwd;
-		
 		private string _usex;
 		
-		private System.Nullable<System.DateTime> _birthday;
+		private string _upwd;
+		
+		private string _uschool;
 		
     #region 可扩展性方法定义
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
+    partial void OnuidChanging(int value);
+    partial void OnuidChanged();
     partial void OnunameChanging(string value);
     partial void OnunameChanged();
-    partial void OnupwdChanging(string value);
-    partial void OnupwdChanged();
     partial void OnusexChanging(string value);
     partial void OnusexChanged();
-    partial void OnbirthdayChanging(System.Nullable<System.DateTime> value);
-    partial void OnbirthdayChanged();
+    partial void OnupwdChanging(string value);
+    partial void OnupwdChanged();
+    partial void OnuschoolChanging(string value);
+    partial void OnuschoolChanged();
     #endregion
 		
-		public t_user()
+		public Users()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uid", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int uid
 		{
 			get
 			{
-				return this._id;
+				return this._uid;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._uid != value))
 				{
-					this.OnidChanging(value);
+					this.OnuidChanging(value);
 					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
+					this._uid = value;
+					this.SendPropertyChanged("uid");
+					this.OnuidChanged();
 				}
 			}
 		}
@@ -578,26 +518,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_upwd", DbType="NVarChar(50)")]
-		public string upwd
-		{
-			get
-			{
-				return this._upwd;
-			}
-			set
-			{
-				if ((this._upwd != value))
-				{
-					this.OnupwdChanging(value);
-					this.SendPropertyChanging();
-					this._upwd = value;
-					this.SendPropertyChanged("upwd");
-					this.OnupwdChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usex", DbType="NVarChar(50)")]
 		public string usex
 		{
@@ -618,22 +538,42 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_birthday", DbType="DateTime")]
-		public System.Nullable<System.DateTime> birthday
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_upwd", DbType="NVarChar(50)")]
+		public string upwd
 		{
 			get
 			{
-				return this._birthday;
+				return this._upwd;
 			}
 			set
 			{
-				if ((this._birthday != value))
+				if ((this._upwd != value))
 				{
-					this.OnbirthdayChanging(value);
+					this.OnupwdChanging(value);
 					this.SendPropertyChanging();
-					this._birthday = value;
-					this.SendPropertyChanged("birthday");
-					this.OnbirthdayChanged();
+					this._upwd = value;
+					this.SendPropertyChanged("upwd");
+					this.OnupwdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uschool", DbType="NVarChar(50)")]
+		public string uschool
+		{
+			get
+			{
+				return this._uschool;
+			}
+			set
+			{
+				if ((this._uschool != value))
+				{
+					this.OnuschoolChanging(value);
+					this.SendPropertyChanging();
+					this._uschool = value;
+					this.SendPropertyChanged("uschool");
+					this.OnuschoolChanged();
 				}
 			}
 		}
@@ -655,240 +595,6 @@ namespace DAL
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.t_UserGoods")]
-	public partial class t_UserGoods
-	{
-		
-		private string _学号;
-		
-		private string _商品编号;
-		
-		private string _商品类型;
-		
-		private string _商品名称;
-		
-		private System.Nullable<double> _商品价格;
-		
-		private string _商品状态;
-		
-		public t_UserGoods()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_学号", DbType="NVarChar(50)")]
-		public string 学号
-		{
-			get
-			{
-				return this._学号;
-			}
-			set
-			{
-				if ((this._学号 != value))
-				{
-					this._学号 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品编号", DbType="NVarChar(50)")]
-		public string 商品编号
-		{
-			get
-			{
-				return this._商品编号;
-			}
-			set
-			{
-				if ((this._商品编号 != value))
-				{
-					this._商品编号 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品类型", DbType="NVarChar(50)")]
-		public string 商品类型
-		{
-			get
-			{
-				return this._商品类型;
-			}
-			set
-			{
-				if ((this._商品类型 != value))
-				{
-					this._商品类型 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品名称", DbType="NVarChar(50)")]
-		public string 商品名称
-		{
-			get
-			{
-				return this._商品名称;
-			}
-			set
-			{
-				if ((this._商品名称 != value))
-				{
-					this._商品名称 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品价格", DbType="Float")]
-		public System.Nullable<double> 商品价格
-		{
-			get
-			{
-				return this._商品价格;
-			}
-			set
-			{
-				if ((this._商品价格 != value))
-				{
-					this._商品价格 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品状态", DbType="NVarChar(50)")]
-		public string 商品状态
-		{
-			get
-			{
-				return this._商品状态;
-			}
-			set
-			{
-				if ((this._商品状态 != value))
-				{
-					this._商品状态 = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.User_goods")]
-	public partial class User_goods
-	{
-		
-		private string _学号;
-		
-		private string _商品编号;
-		
-		private string _商品类型;
-		
-		private string _商品名称;
-		
-		private System.Nullable<double> _商品价格;
-		
-		private string _商品状态;
-		
-		public User_goods()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_学号", DbType="NVarChar(50)")]
-		public string 学号
-		{
-			get
-			{
-				return this._学号;
-			}
-			set
-			{
-				if ((this._学号 != value))
-				{
-					this._学号 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品编号", DbType="NVarChar(50)")]
-		public string 商品编号
-		{
-			get
-			{
-				return this._商品编号;
-			}
-			set
-			{
-				if ((this._商品编号 != value))
-				{
-					this._商品编号 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品类型", DbType="NVarChar(50)")]
-		public string 商品类型
-		{
-			get
-			{
-				return this._商品类型;
-			}
-			set
-			{
-				if ((this._商品类型 != value))
-				{
-					this._商品类型 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品名称", DbType="NVarChar(50)")]
-		public string 商品名称
-		{
-			get
-			{
-				return this._商品名称;
-			}
-			set
-			{
-				if ((this._商品名称 != value))
-				{
-					this._商品名称 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品价格", DbType="Float")]
-		public System.Nullable<double> 商品价格
-		{
-			get
-			{
-				return this._商品价格;
-			}
-			set
-			{
-				if ((this._商品价格 != value))
-				{
-					this._商品价格 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_商品状态", DbType="NVarChar(50)")]
-		public string 商品状态
-		{
-			get
-			{
-				return this._商品状态;
-			}
-			set
-			{
-				if ((this._商品状态 != value))
-				{
-					this._商品状态 = value;
-				}
 			}
 		}
 	}
