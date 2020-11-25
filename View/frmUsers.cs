@@ -52,8 +52,9 @@ namespace View
 
         private void button3_Click(object sender, EventArgs e)
         {
+            int f = Convert.ToInt32(txtSearch.Text.ToString());
             BLL.UserGoodsBLL objU = new BLL.UserGoodsBLL();
-            dataGridView1.DataSource = objU.GetList(x => true);
+            dataGridView1.DataSource = objU.GetList(x => x.uid == f);
             dataGridView1.Refresh();
         }
 
