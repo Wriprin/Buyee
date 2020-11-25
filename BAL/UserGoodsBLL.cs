@@ -35,7 +35,7 @@ namespace BLL
             //return objDAL.Add(Data);
         }
         /// <summary>
-        /// 根据模型中的uid删除指定行
+        /// 根据模型中的gid删除指定行
         /// </summary>
         /// <param name="Data"></param>
         /// <returns></returns>
@@ -44,7 +44,7 @@ namespace BLL
             try
             {
                 //找到数据上下文中，满足条件的记录
-                DAL.UserGoods objT = objDAL.UserGoods.First(x => x.uid == Data.uid);
+                DAL.UserGoods objT = objDAL.UserGoods.First(x => x.gid == Data.gid);
                 //删除该记录
                 objDAL.UserGoods.DeleteOnSubmit(objT);
                 //更新数据上下文改变到数据库
@@ -104,11 +104,11 @@ namespace BLL
         /// <summary>
         /// 根据uid查询一个数据模型，即表中一行数据，没找到对应数据返回null
         /// </summary>
-        /// <param name="uid"></param>
+        /// <param name="GID"></param>
         /// <returns></returns>
-        public DAL.UserGoods GetModel(int uid)
+        public DAL.UserGoods GetModel(int GID)
         {
-            return objDAL.UserGoods.First(x => x.uid == uid);
+            return objDAL.UserGoods.First(x => x.gid == GID);
         }
     }
 }

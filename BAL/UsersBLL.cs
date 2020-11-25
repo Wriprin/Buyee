@@ -94,12 +94,12 @@ namespace BLL
         /// <summary>
         /// 根据用户名和密码，判断用户是否合法
         /// </summary>
+        /// <param name="UId"></param>
         /// <param name="UName"></param>
-        /// <param name="Upwd"></param>
         /// <returns></returns>
-        public bool Login(string UName, string Upwd)
+        public bool Login(string UId, string UName)
         {
-            List<DAL.Users> objL = this.GetList(x => x.uname == UName && x.upwd == Upwd);
+            List<DAL.Users> objL = this.GetList(x => x.uid == int.Parse(UId) && x.uname == UName);
             if (objL.Count > 0)
                 return true;
             else

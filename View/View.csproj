@@ -90,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,6 +111,18 @@
       <Project>{fdaa0b52-9dd8-4378-a082-f0082411cf94}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner04.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

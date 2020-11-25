@@ -43,5 +43,28 @@ namespace View
                 MessageBox.Show("添加失败");
             }
         }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGsearch_Click(object sender, EventArgs e)
+        {
+            if (txtGsearch.Text.ToString() == null)
+            {
+                MessageBox.Show("请输入要查询的商品的ID");
+            }
+            BLL.GoodsBLL objU = new BLL.GoodsBLL();
+            dataGridView1.DataSource = objU.GetList(x => x.gid == Convert.ToInt32(txtGsearch.Text.ToString()));
+            dataGridView1.Refresh();
+        }
+
+        private void btnGallSearch_Click(object sender, EventArgs e)
+        {
+            BLL.GoodsBLL objU = new BLL.GoodsBLL();
+            dataGridView1.DataSource = objU.GetList(x => true);
+            dataGridView1.Refresh();
+        }
     }
 }

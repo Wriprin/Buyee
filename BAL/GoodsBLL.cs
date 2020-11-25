@@ -94,11 +94,11 @@ namespace BLL
         /// <summary>
         /// 根据uid查询一个数据模型，即表中一行数据，没找到对应数据返回null
         /// </summary>
-        /// <param name="uid"></param>
+        /// <param name="gid"></param>
         /// <returns></returns>
-        public DAL.Goods GetModel(int uid)
+        public DAL.Goods GetModel(int gid)
         {
-            return objDAL.Goods.First(x => x.gid == uid);
+            return objDAL.Goods.First(x => x.gid == gid);
         }
     }
 }

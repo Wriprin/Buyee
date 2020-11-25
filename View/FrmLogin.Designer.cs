@@ -65,16 +65,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(273, 130);
+            this.textBox1.Font = new System.Drawing.Font("方正粗黑宋简体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox1.Location = new System.Drawing.Point(273, 126);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 21);
+            this.textBox1.Size = new System.Drawing.Size(193, 27);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(273, 190);
+            this.textBox2.Font = new System.Drawing.Font("方正粗黑宋简体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox2.Location = new System.Drawing.Point(273, 186);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 21);
+            this.textBox2.Size = new System.Drawing.Size(193, 27);
             this.textBox2.TabIndex = 3;
             // 
             // button1

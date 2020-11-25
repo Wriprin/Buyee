@@ -16,6 +16,13 @@ namespace View
             InitializeComponent();
         }
 
+        private void BindGrid()
+        {
+            BLL.UsersBLL objB = new BLL.UsersBLL();
+            dataGridView1.DataSource = objB.GetList(x => true);
+            dataGridView1.Refresh();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             frmMain frmMain = new frmMain();
@@ -29,6 +36,11 @@ namespace View
 
         }
 
+        /// <summary>
+        /// 添加新用户
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             BLL.UsersBLL objRB = new BLL.UsersBLL();
@@ -50,31 +62,72 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// 根据学号查询学生订单信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-            int f = Convert.ToInt32(txtSearch.Text.ToString());
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                MessageBox.Show("请输入要查询的学生的学号");
+            }
+
             BLL.UserGoodsBLL objU = new BLL.UserGoodsBLL();
-            dataGridView1.DataSource = objU.GetList(x => x.uid == f);
+            dataGridView1.DataSource = objU.GetList(x => x.uid == Convert.ToInt32(txtSearch.Text.ToString()));
             dataGridView1.Refresh();
         }
 
 
-
-        private void button4_Click(object sender, EventArgs e)
+        private void btnUdelete_Click(object sender, EventArgs e)
         {
-            BLL.UserGoodsBLL objUB = new BLL.UserGoodsBLL();
-            if (dataGridView1.SelectedRows.Count > 0)
+            BLL.UserGoodsBLL objU = new BLL.UserGoodsBLL();
+            dataGridView1.DataSource = objU.GetList(x => true);
+            dataGridView1.Refresh();
+        }
+
+        /// <summary>
+        /// 用户账户查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>W
+        private void btnUsearch_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtUsearch.Text))
             {
-                int rst = dataGridView1.SelectedRows.Count;
-                foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
+                MessageBox.Show("请输入要查询的用户的ID");
+            }
+
+            BLL.UsersBLL objU = new BLL.UsersBLL();
+            dataGridView2.DataSource = objU.GetList(x => x.uid == Convert.ToInt32(txtUsearch.Text.ToString()));
+            dataGridView2.Refresh();
+        }
+
+
+        /// <summary>
+        /// 用户删除操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUdelete2_Click(object sender, EventArgs e)
+        {
+            BLL.UsersBLL objUB = new BLL.UsersBLL();
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                int rst = dataGridView2.SelectedRows.Count;
+                foreach (DataGridViewRow dr in dataGridView2.SelectedRows)
                 {
-                    DAL.UserGoods objU = new DAL.UserGoods();
+                    DAL.Users objU = new DAL.Users();
                     objU.uid = (int)dr.Cells["uid"].Value;
                     rst -= objUB.Delete(objU);
 
                 }
                 if (rst == 0)
+                {
                     MessageBox.Show("删除成功");
+                    BindGrid();
+                }
                 else
                     MessageBox.Show("删除失败");
             }
