@@ -20,7 +20,9 @@ namespace View
 
             frmUsers frmUsers = new frmUsers();
 
-            Application.Run(frmUsers);
+            frmGoods frmGoods = new frmGoods();
+
+            Application.Run(frmGoods);
 
             if (frmL.LoginOk == true)
             {

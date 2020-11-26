@@ -19,8 +19,8 @@ namespace View
         private void BindGrid()
         {
             BLL.UsersBLL objB = new BLL.UsersBLL();
-            dataGridView1.DataSource = objB.GetList(x => true);
-            dataGridView1.Refresh();
+            dataGridView2.DataSource = objB.GetList(x => x.uid == int.Parse(txtUsearch.Text));
+            dataGridView2.Refresh();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -135,6 +135,22 @@ namespace View
             {
                 MessageBox.Show("请先选中要删除的数据");
             }
+        }
+
+        private void btnUModify_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count == 1)
+            {
+                frmUserUpdate frmUserUpdate = new frmUserUpdate();
+                frmUserUpdate.uid = (int)(dataGridView2.SelectedRows[0].Cells["uid"].Value);
+                frmUserUpdate.ShowDialog();
+                BindGrid();
+            }
+            else
+            {
+                MessageBox.Show("请先选中要修改的一行数据");
+            }
+
         }
     }
 }

@@ -66,5 +66,14 @@ namespace View
             dataGridView1.DataSource = objU.GetList(x => true);
             dataGridView1.Refresh();
         }
+
+        private void btnGmodify_Click(object sender, EventArgs e)
+        {
+            //TabControl tabControl = new TabControl();
+            //MessageBox.Show((tabControl.SelectedIndex).ToString());
+            //this.tabPage3.Show();
+            //tabControl.SelectedIndex = -1;
+            
+        }
     }
 }

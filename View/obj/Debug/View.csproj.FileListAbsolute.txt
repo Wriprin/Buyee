@@ -32,3 +32,4 @@ F:\C\source\repos\Eshop\View\obj\Debug\View.csproj.CoreCompileInputs.cache
 F:\C\source\repos\Eshop\View\obj\Debug\View.csproj.CopyComplete
 F:\C\source\repos\Eshop\View\obj\Debug\View.exe
 F:\C\source\repos\Eshop\View\obj\Debug\View.pdb
+F:\C\source\repos\Eshop\View\obj\Debug\View.frmUserUpdate.resources

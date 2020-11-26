@@ -62,6 +62,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGdelete = new System.Windows.Forms.Button();
+            this.btnGmodify = new System.Windows.Forms.Button();
             this.查找.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -77,6 +78,7 @@
             this.查找.Controls.Add(this.tabPage3);
             this.查找.Controls.Add(this.tabPage4);
             this.查找.Cursor = System.Windows.Forms.Cursors.Default;
+            this.查找.Font = new System.Drawing.Font("方正粗黑宋简体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.查找.Location = new System.Drawing.Point(0, 0);
             this.查找.Name = "查找";
             this.查找.SelectedIndex = 0;
@@ -98,10 +100,10 @@
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(849, 487);
+            this.tabPage1.Size = new System.Drawing.Size(849, 485);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "添加商品";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -215,25 +217,26 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnGmodify);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.btnGallSearch);
             this.tabPage2.Controls.Add(this.btnGdelete);
             this.tabPage2.Controls.Add(this.btnGsearch);
             this.tabPage2.Controls.Add(this.txtGsearch);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(849, 487);
+            this.tabPage2.Size = new System.Drawing.Size(849, 485);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "查找&&删除商品";
+            this.tabPage2.Text = "商品详情";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(849, 487);
+            this.tabPage4.Size = new System.Drawing.Size(849, 485);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "查询学生和订单信息";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -250,9 +253,9 @@
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(849, 487);
+            this.tabPage3.Size = new System.Drawing.Size(849, 485);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "修改商品信息";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -354,7 +357,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(70, 29);
+            this.label6.Location = new System.Drawing.Point(8, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 25);
             this.label6.TabIndex = 0;
@@ -363,7 +366,7 @@
             // txtGsearch
             // 
             this.txtGsearch.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtGsearch.Location = new System.Drawing.Point(190, 26);
+            this.txtGsearch.Location = new System.Drawing.Point(128, 26);
             this.txtGsearch.Name = "txtGsearch";
             this.txtGsearch.Size = new System.Drawing.Size(162, 32);
             this.txtGsearch.TabIndex = 1;
@@ -371,7 +374,7 @@
             // btnGsearch
             // 
             this.btnGsearch.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGsearch.Location = new System.Drawing.Point(401, 22);
+            this.btnGsearch.Location = new System.Drawing.Point(313, 22);
             this.btnGsearch.Name = "btnGsearch";
             this.btnGsearch.Size = new System.Drawing.Size(103, 39);
             this.btnGsearch.TabIndex = 2;
@@ -382,9 +385,9 @@
             // btnGallSearch
             // 
             this.btnGallSearch.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGallSearch.Location = new System.Drawing.Point(657, 22);
+            this.btnGallSearch.Location = new System.Drawing.Point(667, 22);
             this.btnGallSearch.Name = "btnGallSearch";
-            this.btnGallSearch.Size = new System.Drawing.Size(161, 39);
+            this.btnGallSearch.Size = new System.Drawing.Size(144, 39);
             this.btnGallSearch.TabIndex = 4;
             this.btnGallSearch.Text = "全部商品查询";
             this.btnGallSearch.UseVisualStyleBackColor = true;
@@ -413,12 +416,23 @@
             // btnGdelete
             // 
             this.btnGdelete.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGdelete.Location = new System.Drawing.Point(526, 22);
+            this.btnGdelete.Location = new System.Drawing.Point(549, 22);
             this.btnGdelete.Name = "btnGdelete";
             this.btnGdelete.Size = new System.Drawing.Size(103, 39);
             this.btnGdelete.TabIndex = 3;
             this.btnGdelete.Text = "删除";
             this.btnGdelete.UseVisualStyleBackColor = true;
+            // 
+            // btnGmodify
+            // 
+            this.btnGmodify.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnGmodify.Location = new System.Drawing.Point(431, 22);
+            this.btnGmodify.Name = "btnGmodify";
+            this.btnGmodify.Size = new System.Drawing.Size(103, 39);
+            this.btnGmodify.TabIndex = 6;
+            this.btnGmodify.Text = "修改";
+            this.btnGmodify.UseVisualStyleBackColor = true;
+            this.btnGmodify.Click += new System.EventHandler(this.btnGmodify_Click);
             // 
             // frmGoods
             // 
@@ -478,5 +492,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnGdelete;
+        private System.Windows.Forms.Button btnGmodify;
     }
 }
