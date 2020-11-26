@@ -47,7 +47,11 @@ namespace View
             }
             else
             {
-                MessageBox.Show("添加失败");
+                MessageBox.Show("添加失败，商品ID已存在，已经返回主窗体并请重新进入");
+                frmMain frmMain = new frmMain();
+                this.Hide();
+                frmMain.ShowDialog();
+                Application.ExitThread();
             }
         }
 
@@ -83,7 +87,7 @@ namespace View
                 frmGoodUpdate.ShowDialog();
 
                 BLL.GoodsBLL objB = new BLL.GoodsBLL();
-                dataGridView1.DataSource = objB.GetList(x => x.gid == frmGoodUpdate.ID);
+                dataGridView1.DataSource = objB.GetList(x => true);
                 dataGridView1.Refresh();
             }
             else
@@ -92,7 +96,6 @@ namespace View
             }
         }
 
-        public int m { get; set; }
 
         private void btnGdelete_Click(object sender, EventArgs e)
         {
@@ -105,14 +108,13 @@ namespace View
                     DAL.Goods objU = new DAL.Goods();
                     objU.gid = (int)dr.Cells["gid"].Value;
                     rst -= objUB.Delete(objU);
-                    m = (int)dr.Cells["gid"].Value;
                 }
                 
                 if (rst == 0)
                 {
                     MessageBox.Show("删除成功");
                     BLL.GoodsBLL objB = new BLL.GoodsBLL();
-                    dataGridView1.DataSource = objB.GetList(x => x.gid == m);
+                    dataGridView1.DataSource = objB.GetList(x => true);
                     dataGridView1.Refresh();
                 }
                 else

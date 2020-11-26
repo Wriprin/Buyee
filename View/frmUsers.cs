@@ -58,7 +58,11 @@ namespace View
             }
             else
             {
-                MessageBox.Show("注册失败");
+                MessageBox.Show("添加失败，用户ID已存在，已经返回主窗体并请重新进入");
+                frmMain frmMain = new frmMain();
+                this.Hide();
+                frmMain.ShowDialog();
+                Application.ExitThread();
             }
         }
 
