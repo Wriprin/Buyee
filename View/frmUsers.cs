@@ -142,7 +142,7 @@ namespace View
             if (dataGridView2.SelectedRows.Count == 1)
             {
                 frmUserUpdate frmUserUpdate = new frmUserUpdate();
-                frmUserUpdate.uid = (int)(dataGridView2.SelectedRows[0].Cells["uid"].Value);
+                frmUserUpdate.ID = (int)(dataGridView2.SelectedRows[0].Cells["uid"].Value);
                 frmUserUpdate.ShowDialog();
                 BindGrid();
             }
