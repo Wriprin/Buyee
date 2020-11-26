@@ -51,7 +51,6 @@
             this.btnGsearch = new System.Windows.Forms.Button();
             this.txtGsearch = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.查找.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,7 +62,6 @@
             // 
             this.查找.Controls.Add(this.tabPage1);
             this.查找.Controls.Add(this.tabPage2);
-            this.查找.Controls.Add(this.tabPage3);
             this.查找.Cursor = System.Windows.Forms.Cursors.Default;
             this.查找.Font = new System.Drawing.Font("方正粗黑宋简体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.查找.Location = new System.Drawing.Point(0, 0);
@@ -193,12 +191,12 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(758, 444);
+            this.button1.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(758, 442);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 43);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Home";
+            this.button1.Text = "主界面";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -270,6 +268,7 @@
             this.btnGdelete.TabIndex = 3;
             this.btnGdelete.Text = "删除";
             this.btnGdelete.UseVisualStyleBackColor = true;
+            this.btnGdelete.Click += new System.EventHandler(this.btnGdelete_Click);
             // 
             // btnGsearch
             // 
@@ -300,15 +299,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "商品编号";
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(849, 485);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "总表查询";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
             // frmGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -318,7 +308,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGoods";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmGoods";
+            this.Text = "校园内部在线购物管理系统";
             this.查找.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -354,6 +344,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnGdelete;
         private System.Windows.Forms.Button btnGmodify;
-        private System.Windows.Forms.TabPage tabPage3;
     }
 }

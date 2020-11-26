@@ -50,7 +50,7 @@ namespace View
             }
             else
             {
-                MessageBox.Show("修改失败，学号已存在");
+                MessageBox.Show("修改失败");
             }
         }
 

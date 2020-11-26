@@ -195,7 +195,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "frmUserUpdate";
-            this.Text = "frmUserUpdate";
+            this.Text = "校园内部在线购物管理系统";
             this.Load += new System.EventHandler(this.frmUserUpdate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

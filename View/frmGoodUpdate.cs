@@ -22,6 +22,8 @@ namespace View
             txtGpriceModify.Text = (objU.gprice).ToString();
         }
 
+
+
         public int ID
         {
             get;
@@ -48,6 +50,8 @@ namespace View
             {
                 MessageBox.Show("修改失败");
             }
+
+
         }
 
 

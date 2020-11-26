@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnUdelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -52,20 +53,19 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnUModify = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnUdelete2 = new System.Windows.Forms.Button();
             this.btnUsearch = new System.Windows.Forms.Button();
             this.txtUsearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnUModify = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -251,6 +251,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "用户注册";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::View.Properties.Resources.banner03;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(-4, -22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1144, 535);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnUdelete);
@@ -328,8 +338,19 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(805, 491);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "用户账户查询与删除";
+            this.tabPage3.Text = "用户账户详情";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnUModify
+            // 
+            this.btnUModify.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnUModify.Location = new System.Drawing.Point(484, 27);
+            this.btnUModify.Name = "btnUModify";
+            this.btnUModify.Size = new System.Drawing.Size(75, 36);
+            this.btnUModify.TabIndex = 10;
+            this.btnUModify.Text = "修改";
+            this.btnUModify.UseVisualStyleBackColor = true;
+            this.btnUModify.Click += new System.EventHandler(this.btnUModify_Click);
             // 
             // dataGridView2
             // 
@@ -381,27 +402,6 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "用户学号";
             // 
-            // btnUModify
-            // 
-            this.btnUModify.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUModify.Location = new System.Drawing.Point(484, 27);
-            this.btnUModify.Name = "btnUModify";
-            this.btnUModify.Size = new System.Drawing.Size(75, 36);
-            this.btnUModify.TabIndex = 10;
-            this.btnUModify.Text = "修改";
-            this.btnUModify.UseVisualStyleBackColor = true;
-            this.btnUModify.Click += new System.EventHandler(this.btnUModify_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::View.Properties.Resources.banner03;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-4, -22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1144, 535);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -411,17 +411,17 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmUsers";
+            this.Text = "校园内部在线购物管理系统";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

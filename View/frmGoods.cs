@@ -81,11 +81,48 @@ namespace View
                 frmGoodUpdate frmGoodUpdate = new frmGoodUpdate();
                 frmGoodUpdate.ID = (int)(dataGridView1.SelectedRows[0].Cells["gid"].Value);
                 frmGoodUpdate.ShowDialog();
+
+                BLL.GoodsBLL objB = new BLL.GoodsBLL();
+                dataGridView1.DataSource = objB.GetList(x => x.gid == frmGoodUpdate.ID);
+                dataGridView1.Refresh();
             }
             else
             {
                 MessageBox.Show("请先选中要修改的一行数据");
             }
         }
+
+        public int m { get; set; }
+
+        private void btnGdelete_Click(object sender, EventArgs e)
+        {
+            BLL.GoodsBLL objUB = new BLL.GoodsBLL();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int rst = dataGridView1.SelectedRows.Count;
+                foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
+                {
+                    DAL.Goods objU = new DAL.Goods();
+                    objU.gid = (int)dr.Cells["gid"].Value;
+                    rst -= objUB.Delete(objU);
+                    m = (int)dr.Cells["gid"].Value;
+                }
+                
+                if (rst == 0)
+                {
+                    MessageBox.Show("删除成功");
+                    BLL.GoodsBLL objB = new BLL.GoodsBLL();
+                    dataGridView1.DataSource = objB.GetList(x => x.gid == m);
+                    dataGridView1.Refresh();
+                }
+                else
+                    MessageBox.Show("删除失败");
+            }
+            else
+            {
+                MessageBox.Show("请先选中要删除的数据");
+            }
+        }
+
     }
 }

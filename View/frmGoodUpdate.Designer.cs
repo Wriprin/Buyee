@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGoodUpdate));
             this.btnModify = new System.Windows.Forms.Button();
             this.txtGpriceModify = new System.Windows.Forms.TextBox();
             this.txtGnameModify = new System.Windows.Forms.TextBox();
@@ -77,6 +78,7 @@
             // 
             // txtGidModify
             // 
+            this.txtGidModify.Enabled = false;
             this.txtGidModify.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtGidModify.Location = new System.Drawing.Point(179, 85);
             this.txtGidModify.Name = "txtGidModify";
@@ -148,8 +150,9 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGoodUpdate";
-            this.Text = "frmGoodUpdate";
+            this.Text = "校园内部在线购物管理系统";
             this.Load += new System.EventHandler(this.frmGoodUpdate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

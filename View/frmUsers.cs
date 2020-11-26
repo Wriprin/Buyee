@@ -94,11 +94,6 @@ namespace View
         /// <param name="e"></param>W
         private void btnUsearch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUsearch.Text))
-            {
-                MessageBox.Show("请输入要查询的用户的ID");
-            }
-
             BLL.UsersBLL objU = new BLL.UsersBLL();
             dataGridView2.DataSource = objU.GetList(x => x.uid == Convert.ToInt32(txtUsearch.Text.ToString()));
             dataGridView2.Refresh();
