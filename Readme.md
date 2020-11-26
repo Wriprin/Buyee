@@ -1,2 +1,2 @@
-#### 💫GM:https://wriprin.gitee.io/
+#### 💫GM: https://wriprin.gitee.io/
 
