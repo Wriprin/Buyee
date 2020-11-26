@@ -18,6 +18,20 @@ namespace View
             InitializeComponent();
         }
 
+        private void frmUserUpdate_Load(object sender, EventArgs e)
+        {
+            DAL.Users objU = objUB.GetModel(ID);
+
+            txtId.Text = (objU.uid).ToString();
+            txtName.Text = objU.uname;
+            txtPwd.Text = objU.upwd;
+            txtSchool.Text = objU.uschool;
+            if (objU.usex == '男'.ToString())
+                rbMale.Checked = true;
+            else
+                rbFemale.Checked = true;
+        }
+
         public int ID { get; set; }
 
 
@@ -36,8 +50,10 @@ namespace View
             }
             else
             {
-                MessageBox.Show("修改失败");
+                MessageBox.Show("修改失败，学号已存在");
             }
         }
+
+        
     }
 }

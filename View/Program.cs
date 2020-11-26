@@ -22,7 +22,7 @@ namespace View
 
             frmGoods frmGoods = new frmGoods();
 
-            Application.Run(frmGoods);
+            Application.Run(frmL);
 
             if (frmL.LoginOk == true)
             {

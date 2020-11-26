@@ -18,6 +18,13 @@ namespace View
             InitializeComponent();
         }
 
+        private void BindGrid()
+        {
+            BLL.UsersBLL objB = new BLL.UsersBLL();
+            dataGridView1.DataSource = objB.GetList(x => x.uid == int.Parse(txtGsearch.Text));
+            dataGridView1.Refresh();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             frmMain frmMain = new frmMain();
@@ -69,11 +76,16 @@ namespace View
 
         private void btnGmodify_Click(object sender, EventArgs e)
         {
-            //TabControl tabControl = new TabControl();
-            //MessageBox.Show((tabControl.SelectedIndex).ToString());
-            //this.tabPage3.Show();
-            //tabControl.SelectedIndex = -1;
-            
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                frmGoodUpdate frmGoodUpdate = new frmGoodUpdate();
+                frmGoodUpdate.ID = (int)(dataGridView1.SelectedRows[0].Cells["gid"].Value);
+                frmGoodUpdate.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("请先选中要修改的一行数据");
+            }
         }
     }
 }
