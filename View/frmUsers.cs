@@ -125,7 +125,9 @@ namespace View
                 if (rst == 0)
                 {
                     MessageBox.Show("删除成功");
-                    BindGrid();
+                    BLL.UsersBLL objU = new BLL.UsersBLL();
+                    dataGridView2.DataSource = objU.GetList(x => true);
+                    dataGridView2.Refresh();
                 }
                 else
                     MessageBox.Show("删除失败");
@@ -143,13 +145,52 @@ namespace View
                 frmUserUpdate frmUserUpdate = new frmUserUpdate();
                 frmUserUpdate.ID = (int)(dataGridView2.SelectedRows[0].Cells["uid"].Value);
                 frmUserUpdate.ShowDialog();
-                BindGrid();
+                BLL.UsersBLL objU = new BLL.UsersBLL();
+                dataGridView2.DataSource = objU.GetList(x => true);
+                dataGridView2.Refresh();
             }
             else
             {
                 MessageBox.Show("请先选中要修改的一行数据");
             }
 
+        }
+
+        private void frmUsers_Load(object sender, EventArgs e)
+        {
+            this.label1.Parent = pictureBox1;
+            this.label1.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label2.Parent = pictureBox1;
+            this.label2.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label3.Parent = pictureBox1;
+            this.label3.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label4.Parent = pictureBox1;
+            this.label4.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label5.Parent = pictureBox1;
+            this.label5.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label6.Parent = pictureBox1;
+            this.label6.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label9.Parent = pictureBox1;
+            this.label9.BackColor = Color.FromArgb(0, Color.Transparent);
+
+            this.rbMale.Parent = pictureBox1;
+            this.rbMale.BackColor = Color.FromArgb(0, Color.Transparent);
+
+            this.rbFemale.Parent = pictureBox1;
+            this.rbFemale.BackColor = Color.FromArgb(0, Color.Transparent);
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label9.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            BLL.UsersBLL objU = new BLL.UsersBLL();
+            dataGridView2.DataSource = objU.GetList(x => true);
+            dataGridView2.Refresh();
         }
     }
 }

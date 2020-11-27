@@ -66,9 +66,13 @@ namespace View
             {
                 MessageBox.Show("请输入要查询的商品的ID");
             }
-            BLL.GoodsBLL objU = new BLL.GoodsBLL();
-            dataGridView1.DataSource = objU.GetList(x => x.gid == Convert.ToInt32(txtGsearch.Text.ToString()));
-            dataGridView1.Refresh();
+            else
+            {
+                BLL.GoodsBLL objU = new BLL.GoodsBLL();
+                dataGridView1.DataSource = objU.GetList(x => x.gid == Convert.ToInt32(txtGsearch.Text.ToString()));
+                dataGridView1.Refresh();
+            }
+            
         }
 
         private void btnGallSearch_Click(object sender, EventArgs e)
@@ -126,5 +130,25 @@ namespace View
             }
         }
 
+        private void frmGoods_Load(object sender, EventArgs e)
+        {
+            this.label1.Parent = pictureBox1;
+            this.label1.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label2.Parent = pictureBox1;
+            this.label2.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label3.Parent = pictureBox1;
+            this.label3.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label4.Parent = pictureBox1;
+            this.label4.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label5.Parent = pictureBox1;
+            this.label5.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label9.Parent = pictureBox1;
+            this.label9.BackColor = Color.FromArgb(0, Color.Transparent);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label9.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        }
     }
 }

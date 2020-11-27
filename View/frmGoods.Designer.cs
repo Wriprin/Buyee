@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGoods));
             this.查找 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -51,6 +52,8 @@
             this.btnGsearch = new System.Windows.Forms.Button();
             this.txtGsearch = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label9 = new System.Windows.Forms.Label();
             this.查找.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,6 +75,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.txtGprice);
             this.tabPage1.Controls.Add(this.txtGname);
@@ -95,11 +99,12 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button2.BackColor = System.Drawing.Color.PowderBlue;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(587, 344);
+            this.button2.Location = new System.Drawing.Point(585, 357);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 47);
+            this.button2.Size = new System.Drawing.Size(104, 45);
             this.button2.TabIndex = 11;
             this.button2.Text = "添加";
             this.button2.UseVisualStyleBackColor = false;
@@ -107,28 +112,28 @@
             // 
             // txtGprice
             // 
-            this.txtGprice.Location = new System.Drawing.Point(328, 287);
+            this.txtGprice.Location = new System.Drawing.Point(328, 324);
             this.txtGprice.Name = "txtGprice";
             this.txtGprice.Size = new System.Drawing.Size(232, 34);
             this.txtGprice.TabIndex = 10;
             // 
             // txtGname
             // 
-            this.txtGname.Location = new System.Drawing.Point(328, 227);
+            this.txtGname.Location = new System.Drawing.Point(328, 248);
             this.txtGname.Name = "txtGname";
             this.txtGname.Size = new System.Drawing.Size(232, 34);
             this.txtGname.TabIndex = 9;
             // 
             // txtGtype
             // 
-            this.txtGtype.Location = new System.Drawing.Point(328, 167);
+            this.txtGtype.Location = new System.Drawing.Point(328, 183);
             this.txtGtype.Name = "txtGtype";
             this.txtGtype.Size = new System.Drawing.Size(232, 34);
             this.txtGtype.TabIndex = 8;
             // 
             // txtGid
             // 
-            this.txtGid.Location = new System.Drawing.Point(328, 107);
+            this.txtGid.Location = new System.Drawing.Point(328, 119);
             this.txtGid.Name = "txtGid";
             this.txtGid.Size = new System.Drawing.Size(232, 34);
             this.txtGid.TabIndex = 7;
@@ -138,7 +143,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label5.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(238, 291);
+            this.label5.Location = new System.Drawing.Point(238, 346);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 25);
             this.label5.TabIndex = 6;
@@ -149,7 +154,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label4.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(238, 231);
+            this.label4.Location = new System.Drawing.Point(238, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 25);
             this.label4.TabIndex = 5;
@@ -160,7 +165,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label3.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(238, 171);
+            this.label3.Location = new System.Drawing.Point(238, 205);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 25);
             this.label3.TabIndex = 4;
@@ -171,7 +176,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label2.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(238, 111);
+            this.label2.Location = new System.Drawing.Point(238, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 25);
             this.label2.TabIndex = 3;
@@ -181,16 +186,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label1.Font = new System.Drawing.Font("方正粗黑宋简体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(353, 37);
+            this.label1.Font = new System.Drawing.Font("方正粗黑宋简体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(321, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 29);
+            this.label1.Size = new System.Drawing.Size(193, 42);
             this.label1.TabIndex = 2;
             this.label1.Text = "商品添加表";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.BackColor = System.Drawing.Color.PowderBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(758, 442);
             this.button1.Name = "button1";
@@ -299,6 +305,21 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "商品编号";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(8, 479);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 23);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Timer";
+            // 
             // frmGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -309,6 +330,7 @@
             this.Name = "frmGoods";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "校园内部在线购物管理系统";
+            this.Load += new System.EventHandler(this.frmGoods_Load);
             this.查找.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -344,5 +366,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnGdelete;
         private System.Windows.Forms.Button btnGmodify;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label9;
     }
 }

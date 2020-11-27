@@ -45,6 +45,17 @@ namespace View
             Application.ExitThread();
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            
+            this.label1.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.label4.BackColor = Color.FromArgb(0, Color.Transparent);
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label4.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+        }
     }
 }
