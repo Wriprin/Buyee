@@ -150,5 +150,7 @@ namespace View
         {
             label9.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
+
+        
     }
 }

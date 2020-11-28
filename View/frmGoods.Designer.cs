@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGoods));
             this.查找 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.txtGprice = new System.Windows.Forms.TextBox();
             this.txtGname = new System.Windows.Forms.TextBox();
@@ -53,12 +54,13 @@
             this.txtGsearch = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label9 = new System.Windows.Forms.Label();
+            this.dataSet1 = new System.Data.DataSet();
             this.查找.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // 查找
@@ -96,6 +98,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "添加商品";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(8, 479);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 23);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Timer";
             // 
             // button2
             // 
@@ -310,15 +322,9 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label9
+            // dataSet1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(8, 479);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 23);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Timer";
+            this.dataSet1.DataSetName = "Dataset1";
             // 
             // frmGoods
             // 
@@ -338,6 +344,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,5 +375,6 @@
         private System.Windows.Forms.Button btnGmodify;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label9;
+        private System.Data.DataSet dataSet1;
     }
 }

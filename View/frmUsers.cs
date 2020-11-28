@@ -138,6 +138,7 @@ namespace View
             }
         }
 
+
         private void btnUModify_Click(object sender, EventArgs e)
         {
             if (dataGridView2.SelectedRows.Count == 1)
@@ -192,5 +193,7 @@ namespace View
             dataGridView2.DataSource = objU.GetList(x => true);
             dataGridView2.Refresh();
         }
+
+        
     }
 }

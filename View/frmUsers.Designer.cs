@@ -48,28 +48,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnUdelete = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.btnUModify = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnUdelete2 = new System.Windows.Forms.Button();
             this.btnUsearch = new System.Windows.Forms.Button();
             this.txtUsearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnUdelete = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -278,71 +278,6 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.btnUdelete);
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.txtSearch);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(805, 491);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "用户订单查询";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btnUdelete
-            // 
-            this.btnUdelete.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUdelete.Location = new System.Drawing.Point(486, 27);
-            this.btnUdelete.Name = "btnUdelete";
-            this.btnUdelete.Size = new System.Drawing.Size(193, 36);
-            this.btnUdelete.TabIndex = 6;
-            this.btnUdelete.Text = "全部用户订单查询";
-            this.btnUdelete.UseVisualStyleBackColor = true;
-            this.btnUdelete.Click += new System.EventHandler(this.btnUdelete_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 99);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(809, 398);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(364, 27);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 36);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "查询";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtSearch.Location = new System.Drawing.Point(147, 30);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(174, 32);
-            this.txtSearch.TabIndex = 2;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(49, 33);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 25);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "用户学号";
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.button4);
@@ -358,6 +293,17 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "用户账户详情";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button4.Location = new System.Drawing.Point(655, 26);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(145, 36);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "用户总表查询";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnUModify
             // 
@@ -420,21 +366,75 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "用户学号";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnUdelete);
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.txtSearch);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(805, 491);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "用户订单查询";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnUdelete
+            // 
+            this.btnUdelete.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnUdelete.Location = new System.Drawing.Point(495, 27);
+            this.btnUdelete.Name = "btnUdelete";
+            this.btnUdelete.Size = new System.Drawing.Size(193, 36);
+            this.btnUdelete.TabIndex = 6;
+            this.btnUdelete.Text = "全部用户订单查询";
+            this.btnUdelete.UseVisualStyleBackColor = true;
+            this.btnUdelete.Click += new System.EventHandler(this.btnUdelete_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 99);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(809, 398);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.Location = new System.Drawing.Point(380, 27);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 36);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "查询";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSearch.Location = new System.Drawing.Point(147, 30);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(174, 32);
+            this.txtSearch.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(49, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 25);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "用户学号";
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(655, 26);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(145, 36);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "用户总表查询";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // frmUsers
             // 
@@ -451,12 +451,12 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

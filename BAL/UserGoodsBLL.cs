@@ -72,7 +72,7 @@ namespace BLL
             try
             {
                 //找到数据上下文中，满足条件的记录
-                DAL.UserGoods objT = objDAL.UserGoods.First(x => x.uid == Data.uid);
+                DAL.UserGoods objT = objDAL.UserGoods.First(x => x.uid == Data.uid && x.gid == Data.gid);
                 //修改数据记录
                 objT.uid = Data.uid;
                 objT.gid = Data.gid;
@@ -100,6 +100,8 @@ namespace BLL
         {
             return objDAL.UserGoods.Where(condition).ToList<DAL.UserGoods>();
         }
+
+
 
         /// <summary>
         /// 根据uid查询一个数据模型，即表中一行数据，没找到对应数据返回null
