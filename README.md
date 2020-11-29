@@ -1,3 +1,3 @@
 #### Eshop (C# Design Of Curriculum)
 
-#### 💫GM:https://wriprin.gitee.io/
+#### 💫[GM & BLOG](https://wriprin.gitee.io/)
