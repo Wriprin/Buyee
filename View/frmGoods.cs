@@ -151,6 +151,14 @@ namespace View
             label9.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
-        
+        private void btnAllSearch_Click(object sender, EventArgs e)
+        {
+            string SQL = "select Users.uid as 学生ID,uname as 学生姓名,usex as 学生性别," +
+                         "upwd as 学生密码,uschool as 学生学校,gid as 商品ID,gtype as 商品类型," +
+                         "gname as 商品名称,gprice as 商品价格,gstatus as 商品状态 " +
+                         "from Users inner join UserGoods on Users.uid = UserGoods.uid";
+            DataSet objDs = SqlHelper.CreateDataSet(SQL);
+            dataGridView2.DataSource = objDs.Tables[0];
+        }
     }
 }

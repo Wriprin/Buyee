@@ -55,18 +55,24 @@
             this.label6 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataSet1 = new System.Data.DataSet();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnAllSearch = new System.Windows.Forms.Button();
             this.查找.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // 查找
             // 
             this.查找.Controls.Add(this.tabPage1);
             this.查找.Controls.Add(this.tabPage2);
+            this.查找.Controls.Add(this.tabPage3);
             this.查找.Cursor = System.Windows.Forms.Cursors.Default;
             this.查找.Font = new System.Drawing.Font("方正粗黑宋简体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.查找.Location = new System.Drawing.Point(0, 0);
@@ -263,7 +269,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(-4, 75);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(853, 412);
+            this.dataGridView1.Size = new System.Drawing.Size(857, 410);
             this.dataGridView1.TabIndex = 5;
             // 
             // btnGallSearch
@@ -326,6 +332,38 @@
             // 
             this.dataSet1.DataSetName = "Dataset1";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btnAllSearch);
+            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(849, 485);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "总表联合查询";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 50);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(849, 439);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // btnAllSearch
+            // 
+            this.btnAllSearch.Font = new System.Drawing.Font("方正粗黑宋简体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAllSearch.Location = new System.Drawing.Point(271, 3);
+            this.btnAllSearch.Name = "btnAllSearch";
+            this.btnAllSearch.Size = new System.Drawing.Size(309, 45);
+            this.btnAllSearch.TabIndex = 1;
+            this.btnAllSearch.Text = "总表联合查询";
+            this.btnAllSearch.UseVisualStyleBackColor = true;
+            this.btnAllSearch.Click += new System.EventHandler(this.btnAllSearch_Click);
+            // 
             // frmGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -345,6 +383,8 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,5 +416,8 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label9;
         private System.Data.DataSet dataSet1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnAllSearch;
     }
 }
