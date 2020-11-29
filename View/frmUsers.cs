@@ -124,23 +124,26 @@ namespace View
             BLL.UsersBLL objUB = new BLL.UsersBLL();
             if (dataGridView2.SelectedRows.Count > 0)
             {
-                int rst = dataGridView2.SelectedRows.Count;
-                foreach (DataGridViewRow dr in dataGridView2.SelectedRows)
+                if (MessageBox.Show("确认要删除该行数据吗？", "删除确认",MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    DAL.Users objU = new DAL.Users();
-                    objU.uid = (int)dr.Cells["uid"].Value;
-                    rst -= objUB.Delete(objU);
+                    int rst = dataGridView2.SelectedRows.Count;
+                    foreach (DataGridViewRow dr in dataGridView2.SelectedRows)
+                    {
+                        DAL.Users objU = new DAL.Users();
+                        objU.uid = (int)dr.Cells["uid"].Value;
+                        rst -= objUB.Delete(objU);
 
+                    }
+                    if (rst == 0)
+                    {
+                        MessageBox.Show("删除成功");
+                        BLL.UsersBLL objU = new BLL.UsersBLL();
+                        dataGridView2.DataSource = objU.GetList(x => true);
+                        dataGridView2.Refresh();
+                    }
+                    else
+                        MessageBox.Show("删除失败");
                 }
-                if (rst == 0)
-                {
-                    MessageBox.Show("删除成功");
-                    BLL.UsersBLL objU = new BLL.UsersBLL();
-                    dataGridView2.DataSource = objU.GetList(x => true);
-                    dataGridView2.Refresh();
-                }
-                else
-                    MessageBox.Show("删除失败");
             }
             else
             {

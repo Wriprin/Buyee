@@ -106,23 +106,26 @@ namespace View
             BLL.GoodsBLL objUB = new BLL.GoodsBLL();
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                int rst = dataGridView1.SelectedRows.Count;
-                foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
+                if (MessageBox.Show("确认要删除该行数据吗？", "删除确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    DAL.Goods objU = new DAL.Goods();
-                    objU.gid = (int)dr.Cells["gid"].Value;
-                    rst -= objUB.Delete(objU);
+                    int rst = dataGridView1.SelectedRows.Count;
+                    foreach (DataGridViewRow dr in dataGridView1.SelectedRows)
+                    {
+                        DAL.Goods objU = new DAL.Goods();
+                        objU.gid = (int)dr.Cells["gid"].Value;
+                        rst -= objUB.Delete(objU);
+                    }
+
+                    if (rst == 0)
+                    {
+                        MessageBox.Show("删除成功");
+                        BLL.GoodsBLL objB = new BLL.GoodsBLL();
+                        dataGridView1.DataSource = objB.GetList(x => true);
+                        dataGridView1.Refresh();
+                    }
+                    else
+                        MessageBox.Show("删除失败");
                 }
-                
-                if (rst == 0)
-                {
-                    MessageBox.Show("删除成功");
-                    BLL.GoodsBLL objB = new BLL.GoodsBLL();
-                    dataGridView1.DataSource = objB.GetList(x => true);
-                    dataGridView1.Refresh();
-                }
-                else
-                    MessageBox.Show("删除失败");
             }
             else
             {
