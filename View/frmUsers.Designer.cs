@@ -57,6 +57,7 @@
             this.txtUsearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.btnUdelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
@@ -90,7 +91,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("黑体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabControl1.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl1.Location = new System.Drawing.Point(0, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -116,10 +117,10 @@
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Font = new System.Drawing.Font("方正粗黑宋简体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(805, 493);
+            this.tabPage1.Size = new System.Drawing.Size(805, 489);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "用户注册";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -167,6 +168,8 @@
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(194, 25);
             this.txtPwd.TabIndex = 11;
+            this.txtPwd.Enter += new System.EventHandler(this.txtPwd_Enter);
+            this.txtPwd.Leave += new System.EventHandler(this.txtPwd_Leave);
             // 
             // txtName
             // 
@@ -174,6 +177,8 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(194, 25);
             this.txtName.TabIndex = 10;
+            this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
+            this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
             // 
             // txtId
             // 
@@ -181,6 +186,8 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(194, 25);
             this.txtId.TabIndex = 9;
+            this.txtId.Enter += new System.EventHandler(this.txtId_Enter);
+            this.txtId.Leave += new System.EventHandler(this.txtId_Leave);
             // 
             // txtSchool
             // 
@@ -188,6 +195,8 @@
             this.txtSchool.Name = "txtSchool";
             this.txtSchool.Size = new System.Drawing.Size(194, 25);
             this.txtSchool.TabIndex = 8;
+            this.txtSchool.Enter += new System.EventHandler(this.txtSchool_Enter);
+            this.txtSchool.Leave += new System.EventHandler(this.txtSchool_Leave);
             // 
             // button2
             // 
@@ -272,9 +281,9 @@
             // 
             this.pictureBox1.BackgroundImage = global::View.Properties.Resources.banner03;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-4, -22);
+            this.pictureBox1.Location = new System.Drawing.Point(-4, -67);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1086, 537);
+            this.pictureBox1.Size = new System.Drawing.Size(1087, 575);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
@@ -287,11 +296,11 @@
             this.tabPage3.Controls.Add(this.btnUsearch);
             this.tabPage3.Controls.Add(this.txtUsearch);
             this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(805, 491);
+            this.tabPage3.Size = new System.Drawing.Size(805, 489);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "用户账户详情";
+            this.tabPage3.Text = "用户账户管理";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -320,7 +329,7 @@
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(-4, 99);
+            this.dataGridView2.Location = new System.Drawing.Point(-3, 96);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(809, 394);
@@ -368,23 +377,35 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.btnUdelete);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.txtSearch);
             this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(805, 491);
+            this.tabPage2.Size = new System.Drawing.Size(805, 489);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "用户订单查询";
+            this.tabPage2.Text = "用户订单管理";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button5.Location = new System.Drawing.Point(480, 27);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 36);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "删除";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnUdelete
             // 
             this.btnUdelete.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUdelete.Location = new System.Drawing.Point(495, 27);
+            this.btnUdelete.Location = new System.Drawing.Point(585, 27);
             this.btnUdelete.Name = "btnUdelete";
             this.btnUdelete.Size = new System.Drawing.Size(193, 36);
             this.btnUdelete.TabIndex = 6;
@@ -396,7 +417,7 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 99);
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 91);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(809, 398);
@@ -496,5 +517,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -74,11 +74,11 @@
             this.查找.Controls.Add(this.tabPage2);
             this.查找.Controls.Add(this.tabPage3);
             this.查找.Cursor = System.Windows.Forms.Cursors.Default;
-            this.查找.Font = new System.Drawing.Font("黑体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.查找.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.查找.Location = new System.Drawing.Point(0, 0);
             this.查找.Name = "查找";
             this.查找.SelectedIndex = 0;
-            this.查找.Size = new System.Drawing.Size(857, 513);
+            this.查找.Size = new System.Drawing.Size(1051, 583);
             this.查找.TabIndex = 0;
             // 
             // tabPage1
@@ -97,10 +97,10 @@
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(849, 487);
+            this.tabPage1.Size = new System.Drawing.Size(1043, 553);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "添加商品";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(8, 479);
+            this.label9.Location = new System.Drawing.Point(8, 546);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 23);
             this.label9.TabIndex = 11;
@@ -120,7 +120,7 @@
             this.button2.BackColor = System.Drawing.Color.PowderBlue;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(585, 357);
+            this.button2.Location = new System.Drawing.Point(615, 396);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(104, 45);
             this.button2.TabIndex = 11;
@@ -130,38 +130,46 @@
             // 
             // txtGprice
             // 
-            this.txtGprice.Location = new System.Drawing.Point(328, 324);
+            this.txtGprice.Location = new System.Drawing.Point(427, 340);
             this.txtGprice.Name = "txtGprice";
             this.txtGprice.Size = new System.Drawing.Size(232, 34);
             this.txtGprice.TabIndex = 10;
+            this.txtGprice.Enter += new System.EventHandler(this.txtGprice_Enter);
+            this.txtGprice.Leave += new System.EventHandler(this.txtGprice_Leave);
             // 
             // txtGname
             // 
-            this.txtGname.Location = new System.Drawing.Point(328, 248);
+            this.txtGname.Location = new System.Drawing.Point(427, 264);
             this.txtGname.Name = "txtGname";
             this.txtGname.Size = new System.Drawing.Size(232, 34);
             this.txtGname.TabIndex = 9;
+            this.txtGname.Enter += new System.EventHandler(this.txtGname_Enter);
+            this.txtGname.Leave += new System.EventHandler(this.txtGname_Leave);
             // 
             // txtGtype
             // 
-            this.txtGtype.Location = new System.Drawing.Point(328, 183);
+            this.txtGtype.Location = new System.Drawing.Point(427, 199);
             this.txtGtype.Name = "txtGtype";
             this.txtGtype.Size = new System.Drawing.Size(232, 34);
             this.txtGtype.TabIndex = 8;
+            this.txtGtype.Enter += new System.EventHandler(this.txtGtype_Enter);
+            this.txtGtype.Leave += new System.EventHandler(this.txtGtype_Leave);
             // 
             // txtGid
             // 
-            this.txtGid.Location = new System.Drawing.Point(328, 119);
+            this.txtGid.Location = new System.Drawing.Point(427, 135);
             this.txtGid.Name = "txtGid";
             this.txtGid.Size = new System.Drawing.Size(232, 34);
             this.txtGid.TabIndex = 7;
+            this.txtGid.Enter += new System.EventHandler(this.txtGid_Enter);
+            this.txtGid.Leave += new System.EventHandler(this.txtGid_Leave);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label5.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(238, 346);
+            this.label5.Location = new System.Drawing.Point(337, 362);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 25);
             this.label5.TabIndex = 6;
@@ -172,7 +180,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label4.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(238, 270);
+            this.label4.Location = new System.Drawing.Point(337, 286);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 25);
             this.label4.TabIndex = 5;
@@ -183,7 +191,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label3.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(238, 205);
+            this.label3.Location = new System.Drawing.Point(337, 221);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 25);
             this.label3.TabIndex = 4;
@@ -194,7 +202,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label2.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(238, 141);
+            this.label2.Location = new System.Drawing.Point(337, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 25);
             this.label2.TabIndex = 3;
@@ -205,7 +213,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label1.Font = new System.Drawing.Font("方正粗黑宋简体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(321, 32);
+            this.label1.Location = new System.Drawing.Point(420, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 42);
             this.label1.TabIndex = 2;
@@ -216,7 +224,7 @@
             this.button1.BackColor = System.Drawing.Color.PowderBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(758, 442);
+            this.button1.Location = new System.Drawing.Point(952, 510);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 43);
             this.button1.TabIndex = 1;
@@ -230,7 +238,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(-4, -22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1254, 593);
+            this.pictureBox1.Size = new System.Drawing.Size(1397, 644);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -243,18 +251,18 @@
             this.tabPage2.Controls.Add(this.btnGsearch);
             this.tabPage2.Controls.Add(this.txtGsearch);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(849, 485);
+            this.tabPage2.Size = new System.Drawing.Size(1043, 553);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "商品详情";
+            this.tabPage2.Text = "商品管理";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnGmodify
             // 
             this.btnGmodify.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGmodify.Location = new System.Drawing.Point(431, 22);
+            this.btnGmodify.Location = new System.Drawing.Point(538, 22);
             this.btnGmodify.Name = "btnGmodify";
             this.btnGmodify.Size = new System.Drawing.Size(103, 39);
             this.btnGmodify.TabIndex = 6;
@@ -266,16 +274,16 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 75);
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(857, 410);
+            this.dataGridView1.Size = new System.Drawing.Size(1047, 479);
             this.dataGridView1.TabIndex = 5;
             // 
             // btnGallSearch
             // 
             this.btnGallSearch.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGallSearch.Location = new System.Drawing.Point(667, 22);
+            this.btnGallSearch.Location = new System.Drawing.Point(784, 22);
             this.btnGallSearch.Name = "btnGallSearch";
             this.btnGallSearch.Size = new System.Drawing.Size(144, 39);
             this.btnGallSearch.TabIndex = 4;
@@ -286,7 +294,7 @@
             // btnGdelete
             // 
             this.btnGdelete.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGdelete.Location = new System.Drawing.Point(549, 22);
+            this.btnGdelete.Location = new System.Drawing.Point(662, 22);
             this.btnGdelete.Name = "btnGdelete";
             this.btnGdelete.Size = new System.Drawing.Size(103, 39);
             this.btnGdelete.TabIndex = 3;
@@ -297,7 +305,7 @@
             // btnGsearch
             // 
             this.btnGsearch.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGsearch.Location = new System.Drawing.Point(313, 22);
+            this.btnGsearch.Location = new System.Drawing.Point(414, 22);
             this.btnGsearch.Name = "btnGsearch";
             this.btnGsearch.Size = new System.Drawing.Size(103, 39);
             this.btnGsearch.TabIndex = 2;
@@ -308,7 +316,7 @@
             // txtGsearch
             // 
             this.txtGsearch.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtGsearch.Location = new System.Drawing.Point(128, 26);
+            this.txtGsearch.Location = new System.Drawing.Point(229, 26);
             this.txtGsearch.Name = "txtGsearch";
             this.txtGsearch.Size = new System.Drawing.Size(162, 32);
             this.txtGsearch.TabIndex = 1;
@@ -317,7 +325,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(8, 29);
+            this.label6.Location = new System.Drawing.Point(109, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 25);
             this.label6.TabIndex = 0;
@@ -327,9 +335,9 @@
             // 
             this.tabPage3.Controls.Add(this.btnAllSearch);
             this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(849, 485);
+            this.tabPage3.Size = new System.Drawing.Size(1043, 553);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "总表联合查询";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -337,9 +345,9 @@
             // btnAllSearch
             // 
             this.btnAllSearch.Font = new System.Drawing.Font("方正粗黑宋简体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAllSearch.Location = new System.Drawing.Point(271, 3);
+            this.btnAllSearch.Location = new System.Drawing.Point(386, 5);
             this.btnAllSearch.Name = "btnAllSearch";
-            this.btnAllSearch.Size = new System.Drawing.Size(309, 45);
+            this.btnAllSearch.Size = new System.Drawing.Size(309, 35);
             this.btnAllSearch.TabIndex = 1;
             this.btnAllSearch.Text = "总表联合查询";
             this.btnAllSearch.UseVisualStyleBackColor = true;
@@ -349,10 +357,10 @@
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 50);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 44);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(849, 439);
+            this.dataGridView2.Size = new System.Drawing.Size(1043, 506);
             this.dataGridView2.TabIndex = 0;
             // 
             // timer1
@@ -368,7 +376,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 512);
+            this.ClientSize = new System.Drawing.Size(1048, 580);
             this.Controls.Add(this.查找);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGoods";

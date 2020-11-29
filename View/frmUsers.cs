@@ -80,6 +80,7 @@ namespace View
             }
             else
             {
+
                 BLL.UserGoodsBLL objU = new BLL.UserGoodsBLL();
                 dataGridView1.DataSource = objU.GetList(x => x.uid == Convert.ToInt32(txtSearch.Text.ToString()));
                 dataGridView1.Refresh();
@@ -170,6 +171,7 @@ namespace View
 
         }
 
+
         private void frmUsers_Load(object sender, EventArgs e)
         {
             this.label1.Parent = pictureBox1;
@@ -193,6 +195,28 @@ namespace View
             this.rbFemale.Parent = pictureBox1;
             this.rbFemale.BackColor = Color.FromArgb(0, Color.Transparent);
 
+            BLL.UsersBLL objU = new BLL.UsersBLL();
+            dataGridView2.DataSource = objU.GetList(x => true);
+            dataGridView2.Refresh();
+
+            BLL.UserGoodsBLL objUB = new BLL.UserGoodsBLL();
+            dataGridView1.DataSource = objUB.GetList(x => true);
+            dataGridView1.Refresh();
+
+            dataGridView2.Columns[0].HeaderCell.Value = "学生ID";
+            dataGridView2.Columns[1].HeaderCell.Value = "姓名";
+            dataGridView2.Columns[2].HeaderCell.Value = "性别";
+            dataGridView2.Columns[3].HeaderCell.Value = "密码";
+            dataGridView2.Columns[4].HeaderCell.Value = "学校";
+
+
+            dataGridView1.Columns[0].HeaderCell.Value = "学生ID";
+            dataGridView1.Columns[1].HeaderCell.Value = "商品ID";
+            dataGridView1.Columns[2].HeaderCell.Value = "商品类别";
+            dataGridView1.Columns[3].HeaderCell.Value = "商品名称";
+            dataGridView1.Columns[4].HeaderCell.Value = "商品价格";
+            dataGridView1.Columns[5].HeaderCell.Value = "商品状态";
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -202,11 +226,93 @@ namespace View
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+
             BLL.UsersBLL objU = new BLL.UsersBLL();
             dataGridView2.DataSource = objU.GetList(x => true);
             dataGridView2.Refresh();
         }
 
-        
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int uid = (int)(dataGridView1.SelectedRows[0].Cells["uid"].Value);
+            int gid = (int)(dataGridView1.SelectedRows[0].Cells["gid"].Value);
+
+            string SQL = String.Format("delete from UserGoods where uid = {0} and gid = {1}",uid,gid);
+
+            if (SqlHelper.ExcuteSQL(SQL) > 0)
+            {
+                MessageBox.Show("删除成功");
+                BLL.UserGoodsBLL objUB = new BLL.UserGoodsBLL();
+                dataGridView1.DataSource = objUB.GetList(x => true);
+                dataGridView1.Refresh();
+
+            }
+            else
+            {
+                MessageBox.Show("删除失败");
+            }
+        }
+
+        private string Note1 = "示例：黑龙江东方学院";
+        private string Note2 = "示例：18140123";
+        private string Note3 = "示例：王友斌";
+        private string Note4 = "示例：wriprin";
+
+        private void txtSchool_Enter(object sender, EventArgs e)
+        {
+            //  进入时，清空
+            if (txtSchool.Text == Note1)
+                this.txtSchool.Text = "";
+        }
+
+        private void txtSchool_Leave(object sender, EventArgs e)
+        {
+            //  退出时，重新显示
+            if (string.IsNullOrEmpty(txtSchool.Text))
+                this.txtSchool.Text = Note1;
+        }
+
+        private void txtId_Enter(object sender, EventArgs e)
+        {
+            //  进入时，清空
+            if (txtId.Text == Note2)
+                this.txtId.Text = "";
+        }
+
+        private void txtId_Leave(object sender, EventArgs e)
+        {
+            //  退出时，重新显示
+            if (string.IsNullOrEmpty(txtId.Text))
+                this.txtId.Text = Note2;
+        }
+
+        private void txtName_Enter(object sender, EventArgs e)
+        {
+            //  进入时，清空
+            if (txtName.Text == Note3)
+                this.txtName.Text = "";
+        }
+
+        private void txtName_Leave(object sender, EventArgs e)
+        {
+            //  退出时，重新显示
+            if (string.IsNullOrEmpty(txtName.Text))
+                this.txtName.Text = Note3;
+        }
+
+        private void txtPwd_Enter(object sender, EventArgs e)
+        {
+            //  进入时，清空
+            if (txtPwd.Text == Note4)
+                this.txtPwd.Text = "";
+        }
+
+        private void txtPwd_Leave(object sender, EventArgs e)
+        {
+            //  退出时，重新显示
+            if (string.IsNullOrEmpty(txtPwd.Text))
+                this.txtPwd.Text = Note4;
+        }
     }
 }

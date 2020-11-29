@@ -15,18 +15,16 @@ namespace View
         {
             InitializeComponent();
 
-            this.label1.Parent = pictureBox1;
-            this.label1.BackColor = Color.FromArgb(0, Color.Transparent);
-            this.label2.Parent = pictureBox1;
-            this.label2.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.pictureBox2.Parent = pictureBox1;
+            this.pictureBox2.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.pictureBox3.Parent = pictureBox1;
+            this.pictureBox3.BackColor = Color.FromArgb(0, Color.Transparent);
             this.label3.Parent = pictureBox1;
             this.label3.BackColor = Color.FromArgb(0, Color.Transparent);
             this.label4.Parent = pictureBox1;
             this.label4.BackColor = Color.FromArgb(0, Color.Transparent);
             this.label5.Parent = pictureBox1;
             this.label5.BackColor = Color.FromArgb(0, Color.Transparent);
-            this.label6.Parent = pictureBox1;
-            this.label6.BackColor = Color.FromArgb(0, Color.Transparent);
             this.label7.Parent = pictureBox1;
             this.label7.BackColor = Color.FromArgb(0, Color.Transparent);
 
@@ -88,6 +86,7 @@ namespace View
 
             this.LoginOk = false;
             this.LoginYes = false;
+
         }
 
         /// <summary>
@@ -109,7 +108,12 @@ namespace View
         //public event Action<string> SetTxtEvent;
 
 
-        private void label5_Click(object sender, EventArgs e)
+        private void label7_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("chrome.exe", "https://wriprin.gitee.io");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             BLL.AdminBLL objUB = new BLL.AdminBLL();
             BLL.UsersBLL objUU = new BLL.UsersBLL();
@@ -131,16 +135,16 @@ namespace View
             }
         }
 
-
-
-        private void label6_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("chrome.exe", "https://wriprin.gitee.io");
+            LoginYes = true;
+            this.Close();
         }
 
     }

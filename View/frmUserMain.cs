@@ -56,10 +56,7 @@ namespace View
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmLogin frmLogin = new frmLogin();
             this.Close();
-            frmLogin.ShowDialog();
-            Application.ExitThread();
         }
 
 

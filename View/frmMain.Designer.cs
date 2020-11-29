@@ -52,6 +52,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("方正粗黑宋简体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Location = new System.Drawing.Point(106, 175);
@@ -65,6 +66,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("方正粗黑宋简体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(415, 175);
             this.button2.Name = "button2";
@@ -92,8 +94,9 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("方正粗黑宋简体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(652, 419);
+            this.button3.Location = new System.Drawing.Point(652, 416);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 39);
             this.button3.TabIndex = 11;

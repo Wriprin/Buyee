@@ -135,6 +135,7 @@ namespace View
 
         private void frmGoods_Load(object sender, EventArgs e)
         {
+
             this.label1.Parent = pictureBox1;
             this.label1.BackColor = Color.FromArgb(0, Color.Transparent);
             this.label2.Parent = pictureBox1;
@@ -147,7 +148,39 @@ namespace View
             this.label5.BackColor = Color.FromArgb(0, Color.Transparent);
             this.label9.Parent = pictureBox1;
             this.label9.BackColor = Color.FromArgb(0, Color.Transparent);
+
+            BLL.GoodsBLL objU = new BLL.GoodsBLL();
+            dataGridView1.DataSource = objU.GetList(x => true);
+            dataGridView1.Refresh();
+
+
+            string SQL = "select Users.uid as 学生ID,uname as 学生姓名,usex as 学生性别," +
+             "upwd as 学生密码,uschool as 学生学校,gid as 商品ID,gtype as 商品类型," +
+             "gname as 商品名称,gprice as 商品价格,gstatus as 商品状态 " +
+             "from Users inner join UserGoods on Users.uid = UserGoods.uid";
+            DataSet objDs = SqlHelper.CreateDataSet(SQL);
+            dataGridView2.DataSource = objDs.Tables[0];
+
+            dataGridView1.Columns[0].HeaderCell.Value = "商品ID";
+            dataGridView1.Columns[1].HeaderCell.Value = "商品类别";
+            dataGridView1.Columns[2].HeaderCell.Value = "商品名称";
+            dataGridView1.Columns[3].HeaderCell.Value = "商品价格";
+
+
+            dataGridView2.Columns[0].HeaderCell.Value = "学生ID";
+            dataGridView2.Columns[1].HeaderCell.Value = "姓名";
+            dataGridView2.Columns[2].HeaderCell.Value = "性别";
+            dataGridView2.Columns[3].HeaderCell.Value = "密码";
+            dataGridView2.Columns[4].HeaderCell.Value = "学校";
+            dataGridView2.Columns[5].HeaderCell.Value = "商品ID";
+            dataGridView2.Columns[6].HeaderCell.Value = "商品类别";
+            dataGridView2.Columns[7].HeaderCell.Value = "商品名称";
+            dataGridView2.Columns[8].HeaderCell.Value = "商品价格";
+            dataGridView2.Columns[9].HeaderCell.Value = "商品状态";
+
+
         }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -162,6 +195,70 @@ namespace View
                          "from Users inner join UserGoods on Users.uid = UserGoods.uid";
             DataSet objDs = SqlHelper.CreateDataSet(SQL);
             dataGridView2.DataSource = objDs.Tables[0];
+        }
+
+
+
+        private string Note1 = "示例：5001";
+        private string Note2 = "示例：生活用品";
+        private string Note3 = "示例：笔记本";
+        private string Note4 = "示例：5";
+
+
+        private void txtGid_Enter(object sender, EventArgs e)
+        {
+            //  进入时，清空
+            if (txtGid.Text == Note1)
+                this.txtGid.Text = "";
+        }
+
+        private void txtGid_Leave(object sender, EventArgs e)
+        {
+            //  退出时，重新显示
+            if (string.IsNullOrEmpty(txtGid.Text))
+                this.txtGid.Text = Note1;
+        }
+
+        private void txtGtype_Enter(object sender, EventArgs e)
+        {
+            //  进入时，清空
+            if (txtGtype.Text == Note2)
+                this.txtGtype.Text = "";
+        }
+
+        private void txtGtype_Leave(object sender, EventArgs e)
+        {
+            //  退出时，重新显示
+            if (string.IsNullOrEmpty(txtGtype.Text))
+                this.txtGtype.Text = Note2;
+        }
+
+        private void txtGname_Enter(object sender, EventArgs e)
+        {
+            //  进入时，清空
+            if (txtGname.Text == Note3)
+                this.txtGname.Text = "";
+        }
+
+        private void txtGname_Leave(object sender, EventArgs e)
+        {
+            //  退出时，重新显示
+            if (string.IsNullOrEmpty(txtGname.Text))
+                this.txtGname.Text = Note3;
+        }
+
+        private void txtGprice_Enter(object sender, EventArgs e)
+        {
+            //  进入时，清空
+            if (txtGprice.Text == Note4)
+                this.txtGprice.Text = "";
+        }
+
+        private void txtGprice_Leave(object sender, EventArgs e)
+        {
+            //  退出时，重新显示
+            if (string.IsNullOrEmpty(txtGprice.Text))
+                this.txtGprice.Text = Note4;
         }
     }
 }
