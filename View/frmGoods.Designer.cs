@@ -130,36 +130,40 @@
             // 
             // txtGprice
             // 
+            this.txtGprice.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGprice.Location = new System.Drawing.Point(427, 340);
             this.txtGprice.Name = "txtGprice";
-            this.txtGprice.Size = new System.Drawing.Size(232, 34);
+            this.txtGprice.Size = new System.Drawing.Size(232, 31);
             this.txtGprice.TabIndex = 10;
             this.txtGprice.Enter += new System.EventHandler(this.txtGprice_Enter);
             this.txtGprice.Leave += new System.EventHandler(this.txtGprice_Leave);
             // 
             // txtGname
             // 
+            this.txtGname.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGname.Location = new System.Drawing.Point(427, 264);
             this.txtGname.Name = "txtGname";
-            this.txtGname.Size = new System.Drawing.Size(232, 34);
+            this.txtGname.Size = new System.Drawing.Size(232, 31);
             this.txtGname.TabIndex = 9;
             this.txtGname.Enter += new System.EventHandler(this.txtGname_Enter);
             this.txtGname.Leave += new System.EventHandler(this.txtGname_Leave);
             // 
             // txtGtype
             // 
+            this.txtGtype.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGtype.Location = new System.Drawing.Point(427, 199);
             this.txtGtype.Name = "txtGtype";
-            this.txtGtype.Size = new System.Drawing.Size(232, 34);
+            this.txtGtype.Size = new System.Drawing.Size(232, 31);
             this.txtGtype.TabIndex = 8;
             this.txtGtype.Enter += new System.EventHandler(this.txtGtype_Enter);
             this.txtGtype.Leave += new System.EventHandler(this.txtGtype_Leave);
             // 
             // txtGid
             // 
+            this.txtGid.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGid.Location = new System.Drawing.Point(427, 135);
             this.txtGid.Name = "txtGid";
-            this.txtGid.Size = new System.Drawing.Size(232, 34);
+            this.txtGid.Size = new System.Drawing.Size(232, 31);
             this.txtGid.TabIndex = 7;
             this.txtGid.Enter += new System.EventHandler(this.txtGid_Enter);
             this.txtGid.Leave += new System.EventHandler(this.txtGid_Leave);

@@ -19,6 +19,8 @@ namespace View
             this.pictureBox2.BackColor = Color.FromArgb(0, Color.Transparent);
             this.pictureBox3.Parent = pictureBox1;
             this.pictureBox3.BackColor = Color.FromArgb(0, Color.Transparent);
+            this.pictureBox4.Parent = pictureBox1;
+            this.pictureBox4.BackColor = Color.FromArgb(0, Color.Transparent);
             this.label3.Parent = pictureBox1;
             this.label3.BackColor = Color.FromArgb(0, Color.Transparent);
             this.label4.Parent = pictureBox1;
@@ -147,5 +149,9 @@ namespace View
             this.Close();
         }
 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("chrome.exe", "https://github.com/Wriprin/Eshop/tree/master");
+        }
     }
 }

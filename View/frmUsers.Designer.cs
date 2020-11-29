@@ -130,7 +130,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 485);
+            this.label9.Location = new System.Drawing.Point(3, 467);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 23);
             this.label9.TabIndex = 10;
@@ -141,7 +141,7 @@
             this.rbFemale.AutoSize = true;
             this.rbFemale.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.rbFemale.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rbFemale.Location = new System.Drawing.Point(432, 339);
+            this.rbFemale.Location = new System.Drawing.Point(432, 333);
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(50, 29);
             this.rbFemale.TabIndex = 13;
@@ -154,7 +154,7 @@
             this.rbMale.AutoSize = true;
             this.rbMale.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.rbMale.Font = new System.Drawing.Font("方正粗黑宋简体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rbMale.Location = new System.Drawing.Point(346, 339);
+            this.rbMale.Location = new System.Drawing.Point(346, 333);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(50, 29);
             this.rbMale.TabIndex = 12;
@@ -164,36 +164,40 @@
             // 
             // txtPwd
             // 
+            this.txtPwd.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtPwd.Location = new System.Drawing.Point(322, 271);
             this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(194, 25);
+            this.txtPwd.Size = new System.Drawing.Size(213, 31);
             this.txtPwd.TabIndex = 11;
             this.txtPwd.Enter += new System.EventHandler(this.txtPwd_Enter);
             this.txtPwd.Leave += new System.EventHandler(this.txtPwd_Leave);
             // 
             // txtName
             // 
+            this.txtName.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtName.Location = new System.Drawing.Point(322, 215);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(194, 25);
+            this.txtName.Size = new System.Drawing.Size(213, 31);
             this.txtName.TabIndex = 10;
             this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
             this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
             // 
             // txtId
             // 
+            this.txtId.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtId.Location = new System.Drawing.Point(322, 162);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(194, 25);
+            this.txtId.Size = new System.Drawing.Size(213, 31);
             this.txtId.TabIndex = 9;
             this.txtId.Enter += new System.EventHandler(this.txtId_Enter);
             this.txtId.Leave += new System.EventHandler(this.txtId_Leave);
             // 
             // txtSchool
             // 
+            this.txtSchool.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtSchool.Location = new System.Drawing.Point(322, 104);
             this.txtSchool.Name = "txtSchool";
-            this.txtSchool.Size = new System.Drawing.Size(194, 25);
+            this.txtSchool.Size = new System.Drawing.Size(213, 31);
             this.txtSchool.TabIndex = 8;
             this.txtSchool.Enter += new System.EventHandler(this.txtSchool_Enter);
             this.txtSchool.Leave += new System.EventHandler(this.txtSchool_Leave);
@@ -216,7 +220,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label6.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(229, 344);
+            this.label6.Location = new System.Drawing.Point(229, 335);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 24);
             this.label6.TabIndex = 6;
@@ -227,7 +231,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label5.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(229, 288);
+            this.label5.Location = new System.Drawing.Point(229, 273);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 24);
             this.label5.TabIndex = 5;
@@ -238,7 +242,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label4.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(229, 232);
+            this.label4.Location = new System.Drawing.Point(229, 217);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 24);
             this.label4.TabIndex = 4;
@@ -249,7 +253,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label3.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(229, 179);
+            this.label3.Location = new System.Drawing.Point(229, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 24);
             this.label3.TabIndex = 3;
@@ -260,7 +264,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label2.Font = new System.Drawing.Font("方正粗黑宋简体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(229, 123);
+            this.label2.Location = new System.Drawing.Point(229, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 24);
             this.label2.TabIndex = 2;
@@ -271,7 +275,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label1.Font = new System.Drawing.Font("方正粗黑宋简体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(315, 32);
+            this.label1.Location = new System.Drawing.Point(324, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 42);
             this.label1.TabIndex = 1;
@@ -281,9 +285,9 @@
             // 
             this.pictureBox1.BackgroundImage = global::View.Properties.Resources.banner03;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-4, -67);
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1087, 575);
+            this.pictureBox1.Size = new System.Drawing.Size(1095, 622);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
