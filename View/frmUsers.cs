@@ -73,14 +73,17 @@ namespace View
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrWhiteSpace(txtSearch.Text))
             {
                 MessageBox.Show("请输入要查询的学生的学号");
             }
-
-            BLL.UserGoodsBLL objU = new BLL.UserGoodsBLL();
-            dataGridView1.DataSource = objU.GetList(x => x.uid == Convert.ToInt32(txtSearch.Text.ToString()));
-            dataGridView1.Refresh();
+            else
+            {
+                BLL.UserGoodsBLL objU = new BLL.UserGoodsBLL();
+                dataGridView1.DataSource = objU.GetList(x => x.uid == Convert.ToInt32(txtSearch.Text.ToString()));
+                dataGridView1.Refresh();
+            }
         }
 
 
@@ -98,9 +101,16 @@ namespace View
         /// <param name="e"></param>W
         private void btnUsearch_Click(object sender, EventArgs e)
         {
-            BLL.UsersBLL objU = new BLL.UsersBLL();
-            dataGridView2.DataSource = objU.GetList(x => x.uid == Convert.ToInt32(txtUsearch.Text.ToString()));
-            dataGridView2.Refresh();
+            if (string.IsNullOrWhiteSpace(txtUsearch.Text))
+            {
+                MessageBox.Show("请输入要查询的学生的学号");
+            }
+            else
+            {
+                BLL.UsersBLL objU = new BLL.UsersBLL();
+                dataGridView2.DataSource = objU.GetList(x => x.uid == Convert.ToInt32(txtUsearch.Text.ToString()));
+                dataGridView2.Refresh();
+            }
         }
 
 

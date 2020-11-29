@@ -62,7 +62,7 @@ namespace View
 
         private void btnGsearch_Click(object sender, EventArgs e)
         {
-            if (txtGsearch.Text.ToString() == null)
+            if (string.IsNullOrWhiteSpace(txtGsearch.Text))
             {
                 MessageBox.Show("请输入要查询的商品的ID");
             }
@@ -157,7 +157,7 @@ namespace View
                          "upwd as 学生密码,uschool as 学生学校,gid as 商品ID,gtype as 商品类型," +
                          "gname as 商品名称,gprice as 商品价格,gstatus as 商品状态 " +
                          "from Users inner join UserGoods on Users.uid = UserGoods.uid";
-            DataSet objDs = SqlHelper.CreateDataSet(SQL);
+            DataSet objDs = Class.CreateDataSet(SQL);
             dataGridView2.DataSource = objDs.Tables[0];
         }
     }

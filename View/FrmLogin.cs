@@ -27,7 +27,8 @@ namespace View
             this.label5.BackColor = Color.FromArgb(0, Color.Transparent);
             this.label6.Parent = pictureBox1;
             this.label6.BackColor = Color.FromArgb(0, Color.Transparent);
-
+            this.label7.Parent = pictureBox1;
+            this.label7.BackColor = Color.FromArgb(0, Color.Transparent);
 
         }
 
