@@ -57,5 +57,10 @@ namespace View
             label4.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

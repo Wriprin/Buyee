@@ -122,7 +122,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BAL\BLL.csproj">
+    <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{b47b1298-939b-453b-b3b1-ab569707e9a4}</Project>
       <Name>BLL</Name>
     </ProjectReference>
