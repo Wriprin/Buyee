@@ -8,7 +8,7 @@ using System.Data;
 
 namespace View
 {
-    public static class Class
+    public static class SqlHelper
     {
         /// <summary>
         /// 连接字符串

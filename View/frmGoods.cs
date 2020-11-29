@@ -157,7 +157,7 @@ namespace View
                          "upwd as 学生密码,uschool as 学生学校,gid as 商品ID,gtype as 商品类型," +
                          "gname as 商品名称,gprice as 商品价格,gstatus as 商品状态 " +
                          "from Users inner join UserGoods on Users.uid = UserGoods.uid";
-            DataSet objDs = Class.CreateDataSet(SQL);
+            DataSet objDs = SqlHelper.CreateDataSet(SQL);
             dataGridView2.DataSource = objDs.Tables[0];
         }
     }
