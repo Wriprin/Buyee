@@ -74,7 +74,7 @@
             this.查找.Controls.Add(this.tabPage2);
             this.查找.Controls.Add(this.tabPage3);
             this.查找.Cursor = System.Windows.Forms.Cursors.Default;
-            this.查找.Font = new System.Drawing.Font("方正粗黑宋简体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.查找.Font = new System.Drawing.Font("黑体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.查找.Location = new System.Drawing.Point(0, 0);
             this.查找.Name = "查找";
             this.查找.SelectedIndex = 0;
@@ -97,10 +97,10 @@
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(849, 485);
+            this.tabPage1.Size = new System.Drawing.Size(849, 487);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "添加商品";
             this.tabPage1.UseVisualStyleBackColor = true;

@@ -33,6 +33,7 @@ namespace View
         }
 
 
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -43,20 +44,26 @@ namespace View
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            BLL.AdminBLL objUB = new BLL.AdminBLL();
-            if (objUB.Login(textBox1.Text, textBox2.Text))
-            {
-                LoginOk = true;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Access Denied!");
-                LoginOk = false;
-            }
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    BLL.AdminBLL objUB = new BLL.AdminBLL();
+        //    BLL.UsersBLL objUU = new BLL.UsersBLL();
+        //    if (objUB.Login(textBox1.Text, textBox2.Text))
+        //    {
+        //        LoginOk = true;
+        //        this.Close();
+        //    }
+        //    else if (objUU.Login(textBox1.Text, textBox2.Text))
+        //    {
+        //        LoginYes = true;
+        //        this.Close();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Access Denied!");
+        //        LoginOk = false;
+        //    }
+        //}
 
         /// <summary>
         /// 是否登录成功标志
@@ -67,10 +74,20 @@ namespace View
             set;
         }
 
+        public bool LoginYes
+        {
+            get;
+            set;
+        }
+
+
+        
+        
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
             this.LoginOk = false;
+            this.LoginYes = false;
         }
 
         /// <summary>
@@ -89,13 +106,23 @@ namespace View
             label4.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
+        //public event Action<string> SetTxtEvent;
+
+
         private void label5_Click(object sender, EventArgs e)
         {
             BLL.AdminBLL objUB = new BLL.AdminBLL();
+            BLL.UsersBLL objUU = new BLL.UsersBLL();
             if (objUB.Login(textBox1.Text, textBox2.Text))
             {
                 LoginOk = true;
                 this.Close();
+            }
+            else if (objUU.Login(textBox1.Text, textBox2.Text))
+            {
+                LoginYes = true;
+                this.Close();
+                //SetTxtEvent(textBox1.Text);
             }
             else
             {
@@ -103,6 +130,8 @@ namespace View
                 LoginOk = false;
             }
         }
+
+
 
         private void label6_Click(object sender, EventArgs e)
         {

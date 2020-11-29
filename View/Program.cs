@@ -18,6 +18,7 @@ namespace View
 
             frmLogin frmL = new frmLogin();
 
+
             frmUsers frmUsers = new frmUsers();
 
             frmGoods frmGoods = new frmGoods();
@@ -27,6 +28,11 @@ namespace View
             if (frmL.LoginOk == true)
             {
                 Application.Run(new frmMain());
+            }
+
+            if (frmL.LoginYes == true)
+            {
+                Application.Run(new frmUserMain());
             }
             
         }
